@@ -44,10 +44,25 @@ void create_group(const std::string &group, int memGB) {
   }
 }
 
+pid_t get_shell_pid() {
+  // When run via sudo: shell → sudo → srcg
+  // getppid() gives sudo's PID, we need the shell (grandparent)
+  pid_t parent = getppid();
+  std::string status_path = "/proc/" + std::to_string(parent) + "/status";
+  std::ifstream status(status_path);
+  std::string line;
+  while (std::getline(status, line)) {
+    if (line.substr(0, 5) == "PPid:") {
+      return std::stoi(line.substr(6));
+    }
+  }
+  return parent; // fallback
+}
+
 void attach_shell(const std::string &group) {
   std::string path = ROOT + "/" + group + "/cgroup.procs";
 
-  pid_t shell_pid = getppid(); // parent = shell
+  pid_t shell_pid = get_shell_pid();
   write_file(path, std::to_string(shell_pid));
 
   std::cout << "Shell PID " << shell_pid << " attached to group '" << group
