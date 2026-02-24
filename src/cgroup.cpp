@@ -28,6 +28,8 @@ void ensure_root() {
   if (!fs::exists(ROOT)) {
     fs::create_directories(ROOT);
   }
+  // Enable memory controller for child cgroups
+  write_file(ROOT + "/cgroup.subtree_control", "+memory");
 }
 
 void create_group(const std::string &group, int memGB) {
