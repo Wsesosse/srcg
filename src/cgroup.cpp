@@ -1,63 +1,78 @@
-#include "cgroup.h"
 #include <filesystem>
 #include <fstream>
 #include <iostream>
+#include <string>
 #include <unistd.h>
 
 namespace fs = std::filesystem;
 
-namespace cgroup {
+const std::string ROOT = "/sys/fs/cgroup/srcg";
 
-bool exists(const std::string &path) { return fs::exists(path); }
+void usage() {
+  std::cout << "Usage:\n";
+  std::cout << "  srcg -s <group> <memGB>\n";
+  std::cout << "  srcg -t <group>\n";
+  exit(1);
+}
 
-bool create_group(const std::string &name) {
-  std::string dir = ROOT + "/" + name;
+void write_file(const std::string &path, const std::string &value) {
+  std::ofstream f(path);
+  if (!f) {
+    std::cerr << "Error writing to " << path << "\n";
+    exit(1);
+  }
+  f << value;
+}
 
-  if (!exists(ROOT)) {
-    fs::create_directory(ROOT);
+void ensure_root() {
+  if (!fs::exists(ROOT)) {
+    fs::create_directories(ROOT);
+  }
+}
+
+void create_group(const std::string &group, int memGB) {
+  std::string dir = ROOT + "/" + group;
+
+  if (!fs::exists(dir)) {
+    fs::create_directories(dir);
+
+    long long bytes = static_cast<long long>(memGB) * 1024LL * 1024LL * 1024LL;
+
+    write_file(dir + "/memory.max", std::to_string(bytes));
+  }
+}
+
+void attach_shell(const std::string &group) {
+  std::string path = ROOT + "/" + group + "/cgroup.procs";
+
+  pid_t shell_pid = getppid(); // parent = shell
+  write_file(path, std::to_string(shell_pid));
+
+  std::cout << "Shell PID " << shell_pid << " attached to group '" << group
+            << "'\n";
+}
+
+int main(int argc, char *argv[]) {
+  if (argc < 3)
+    usage();
+
+  std::string mode = argv[1];
+  std::string group = argv[2];
+
+  ensure_root();
+
+  if (mode == "-s") {
+    if (argc != 4)
+      usage();
+
+    int memGB = std::stoi(argv[3]);
+    create_group(group, memGB);
+    attach_shell(group);
+  } else if (mode == "-t") {
+    attach_shell(group);
+  } else {
+    usage();
   }
 
-  if (!exists(dir)) {
-    return fs::create_directory(dir);
-  }
-
-  return true;
+  return 0;
 }
-
-bool set_memory_limit(const std::string &name, int gb) {
-  std::string file = ROOT + "/" + name + "/memory.max";
-  long bytes = (long)gb * 1024 * 1024 * 1024;
-
-  std::ofstream ofs(file);
-  if (!ofs)
-    return false;
-
-  ofs << bytes;
-  return true;
-}
-
-bool add_pid(const std::string &name, int pid) {
-  std::string file = ROOT + "/" + name + "/cgroup.procs";
-
-  std::ofstream ofs(file);
-  if (!ofs)
-    return false;
-
-  ofs << pid;
-  return true;
-}
-
-long read_memory_mb(const std::string &name) {
-  std::string file = ROOT + "/" + name + "/memory.current";
-  std::ifstream ifs(file);
-
-  if (!ifs)
-    return -1;
-
-  long bytes;
-  ifs >> bytes;
-
-  return bytes / 1024 / 1024;
-}
-
-} // namespace cgroup
