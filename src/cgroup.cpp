@@ -12,6 +12,7 @@ void usage() {
   std::cout << "Usage:\n";
   std::cout << "  srcg -s <group> <memGB>\n";
   std::cout << "  srcg -t <group>\n";
+  std::cout << "  srcg -d <group>\n";
   exit(1);
 }
 
@@ -41,6 +42,14 @@ void create_group(const std::string &group, int memGB) {
     long long bytes = static_cast<long long>(memGB) * 1024LL * 1024LL * 1024LL;
 
     write_file(dir + "/memory.max", std::to_string(bytes));
+  }
+}
+
+void destruct_group(const std::string &group) {
+  std::string dir = ROOT + "/" + group;
+
+  if (fs::exists(dir)) {
+    fs::remove_all(dir);
   }
 }
 
@@ -87,6 +96,8 @@ int main(int argc, char *argv[]) {
     attach_shell(group);
   } else if (mode == "-t") {
     attach_shell(group);
+  } else if (mode == "-d") {
+    destruct_group(group);
   } else {
     usage();
   }
