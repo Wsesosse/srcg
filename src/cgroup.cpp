@@ -10,9 +10,9 @@ const std::string ROOT = "/sys/fs/cgroup/srcg";
 
 void usage() {
   std::cout << "Usage:\n";
-  std::cout << "  srcg -s <group> <memGB>\n";
-  std::cout << "  srcg -t <group>\n";
-  std::cout << "  srcg -d <group>\n";
+  std::cout << "  srcg -s <group> <memGB>   Create a new cgroup with the specified memory limit\n";
+  std::cout << "  srcg -t <group>           Attach the current shell to the specified cgroup\n";
+  std::cout << "  srcg -d <group>           Delete the specified cgroup\n";
   exit(1);
 }
 
