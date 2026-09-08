@@ -1,0 +1,6 @@
+#ifdef PYTORCH_PLUGIN_H
+#define PYTORCH_PLUGIN_H
+
+
+
+#endif // PYTORCH_PLUGIN_H

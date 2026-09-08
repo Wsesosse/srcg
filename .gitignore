@@ -1,0 +1,6 @@
+ML-dummy/
+cmake-build-debug/
+build/
+.idea/
+test
+test.cpp
