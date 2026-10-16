@@ -5,8 +5,10 @@
 #include <filesystem>
 #include <fstream>
 #include <memory>
+#include <signal.h>
 #include <stdexcept>
 #include <string>
+#include <thread>
 #include <unistd.h>
 
 namespace {
@@ -75,4 +77,16 @@ int main() {
       });
   assert(classified.exit_code == 0);
   assert(classified.cgroup_oom);
+
+  fixture.manager().createJob("signal-forward-test",
+                              256ULL * 1024ULL * 1024ULL, std::uint64_t{0});
+  std::thread terminator([] {
+    std::this_thread::sleep_for(std::chrono::milliseconds{50});
+    ::kill(::getpid(), SIGTERM);
+  });
+  const auto terminated =
+      supervisor.run("signal-forward-test", {"/bin/sleep", "10"});
+  terminator.join();
+  assert(!terminated.exit_code.has_value());
+  assert(terminated.termination_signal == SIGTERM);
 }

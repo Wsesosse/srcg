@@ -6,6 +6,7 @@
 #include <cstring>
 #include <fstream>
 #include <linux/magic.h>
+#include <limits>
 #include <sstream>
 #include <stdexcept>
 #include <string>
@@ -266,20 +267,42 @@ void CgroupV2Manager::initializeParent(std::uint64_t memory_limit_bytes,
   if (memory_limit_bytes == 0) {
     throw std::invalid_argument("parent memory limit must be positive");
   }
+  const bool parent_existed = std::filesystem::exists(parent_);
   auto ancestor = nearestExisting(parent_);
   if (ancestor.empty()) {
     throw std::runtime_error("no existing ancestor for cgroup parent " +
                              parent_.string());
   }
   requireKernelCgroupV2(ancestor);
+
+  if (parent_existed) {
+    ensureTestControlFiles(parent_);
+    if (!std::filesystem::exists(parent_ / "memory.max") ||
+        !std::filesystem::exists(parent_ / "memory.swap.max")) {
+      throw std::runtime_error("existing parent is not a delegated memory "
+                               "cgroup: " +
+                               parent_.string());
+    }
+    const auto configured_memory = readLimit(parent_ / "memory.max");
+    const auto configured_swap = readLimit(parent_ / "memory.swap.max");
+    if (configured_memory != MemoryLimit{memory_limit_bytes} ||
+        configured_swap != swap_limit_bytes) {
+      throw std::runtime_error(
+          "parent cgroup already exists with different limits; refusing to "
+          "overwrite its configuration");
+    }
+    // Enabling the controller for child jobs is idempotent and does not alter
+    // the already configured parent memory/swap limits.
+    ensureMemoryController(parent_);
+    return;
+  }
+
   ensureMemoryController(ancestor);
 
   std::error_code error;
-  if (!std::filesystem::exists(parent_)) {
-    if (!std::filesystem::create_directory(parent_, error)) {
-      throw std::runtime_error("cannot create cgroup parent " +
-                               parent_.string() + ": " + error.message());
-    }
+  if (!std::filesystem::create_directory(parent_, error)) {
+    throw std::runtime_error("cannot create cgroup parent " + parent_.string() +
+                             ": " + error.message());
   }
   ensureTestControlFiles(parent_);
   if (!std::filesystem::exists(parent_ / "memory.max")) {
@@ -307,6 +330,34 @@ CgroupV2Manager::jobPath(const std::string &job_id) const {
   return parent_ / job_id;
 }
 
+std::vector<CgroupMemoryBoundary>
+CgroupV2Manager::ancestorMemoryBoundaries() const {
+  std::vector<CgroupMemoryBoundary> result;
+  auto ancestor = parent_.parent_path();
+  while (!ancestor.empty()) {
+    const auto limit_path = ancestor / "memory.max";
+    const auto current_path = ancestor / "memory.current";
+    if (std::filesystem::exists(limit_path) &&
+        std::filesystem::exists(current_path)) {
+      const auto limit = readLimit(limit_path);
+      if (limit) {
+        const auto current = parseUnsigned(readText(current_path), current_path);
+        result.push_back({.path = ancestor,
+                          .limit_bytes = *limit,
+                          .current_bytes = current,
+                          .available_bytes =
+                              current < *limit ? *limit - current : 0});
+      }
+    }
+    const auto next = ancestor.parent_path();
+    if (next == ancestor) {
+      break;
+    }
+    ancestor = next;
+  }
+  return result;
+}
+
 void CgroupV2Manager::createJob(const std::string &job_id,
                                 std::uint64_t memory_limit_bytes,
                                 MemoryLimit swap_limit_bytes) {
@@ -314,10 +365,22 @@ void CgroupV2Manager::createJob(const std::string &job_id,
     throw std::invalid_argument("job memory limit must be positive");
   }
   const auto path = jobPath(job_id);
+  if (std::filesystem::exists(path)) {
+    const auto existing = snapshotPath(path, job_id);
+    if (existing.populated || !existing.processes.empty()) {
+      throw std::runtime_error("job is already running: " + path.string());
+    }
+    // A previous supervisor may have been terminated before it could remove
+    // an already empty cgroup. Reusing the logical job id must recover from
+    // that stale registration without requiring a separate cleanup command.
+    cleanupJob(job_id);
+  }
+
   std::error_code error;
   if (!std::filesystem::create_directory(path, error)) {
     if (std::filesystem::exists(path)) {
-      throw std::runtime_error("job cgroup already exists: " + path.string());
+      throw std::runtime_error(
+          "job cgroup was created concurrently: " + path.string());
     }
     throw std::runtime_error("cannot create job cgroup " + path.string() +
                              ": " + error.message());
@@ -342,6 +405,45 @@ void CgroupV2Manager::createJob(const std::string &job_id,
     }
     throw;
   }
+}
+
+void CgroupV2Manager::setJobMemoryLimit(
+    const std::string &job_id, std::uint64_t memory_limit_bytes) {
+  if (memory_limit_bytes == 0) {
+    throw std::invalid_argument("job memory limit must be positive");
+  }
+  const auto parent = parentSnapshot();
+  if (!parent.memory_max_bytes) {
+    throw std::runtime_error("srcg parent memory.max must be finite");
+  }
+  if (memory_limit_bytes > *parent.memory_max_bytes) {
+    throw std::invalid_argument("job memory limit exceeds srcg parent limit");
+  }
+  const auto path = jobPath(job_id) / "memory.max";
+  if (!std::filesystem::exists(path)) {
+    throw std::runtime_error("job cgroup does not exist: " +
+                             jobPath(job_id).string());
+  }
+  writeText(path, std::to_string(memory_limit_bytes) + "\n");
+}
+
+bool CgroupV2Manager::lowerJobMemoryLimitIfSafe(
+    const std::string &job_id, std::uint64_t memory_limit_bytes,
+    std::uint64_t safety_margin_bytes) {
+  const auto state = snapshot(job_id);
+  if (state.memory_max_bytes && memory_limit_bytes > *state.memory_max_bytes) {
+    throw std::invalid_argument(
+        "safe-lower operation cannot increase job memory limit");
+  }
+  if (safety_margin_bytes >
+          std::numeric_limits<std::uint64_t>::max() -
+              state.memory_current_bytes ||
+      state.memory_current_bytes + safety_margin_bytes >
+          memory_limit_bytes) {
+    return false;
+  }
+  setJobMemoryLimit(job_id, memory_limit_bytes);
+  return true;
 }
 
 void CgroupV2Manager::attachProcess(const std::string &job_id,
@@ -388,10 +490,16 @@ CgroupSnapshot CgroupV2Manager::snapshot(const std::string &job_id) const {
   return snapshotPath(jobPath(job_id), job_id);
 }
 
+CgroupSnapshot CgroupV2Manager::parentSnapshot() const {
+  return snapshotPath(parent_, "srcg-parent");
+}
+
 bool CgroupV2Manager::cleanupSafe(const std::string &job_id) const {
   const auto state = snapshot(job_id);
-  return !state.populated && state.processes.empty() &&
-         state.memory_current_bytes == 0;
+  // memory.current is not a liveness indicator. Page cache and kernel charges
+  // can remain after the last process exits; the kernel safely reparents those
+  // residual charges when an empty cgroup is removed.
+  return !state.populated && state.processes.empty();
 }
 
 void CgroupV2Manager::cleanupJob(const std::string &job_id) {

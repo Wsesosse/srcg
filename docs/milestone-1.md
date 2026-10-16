@@ -45,29 +45,41 @@ build-srcg/srcg check --parent /sys/fs/cgroup/srcg
 `check` reports the filesystem version, memory-controller state, parent
 existence, writability, and concrete setup problems.
 
-## Run a job
+## Initialize the parent and run a job
 
 All values are converted to bytes internally. IEC (`GiB`, `MiB`) and decimal
 (`GB`, `MB`) input units are distinct. Swap defaults to zero but is always
 logged.
 
+Initialize the parent once:
+
 ```bash
-build-srcg/srcg run \
+build-srcg/srcg init \
   --parent /sys/fs/cgroup/srcg \
   --parent-memory 6GiB \
   --parent-swap 0 \
-  --host-headroom 2GiB \
+  --host-headroom 2GiB
+```
+
+Then run jobs without rewriting parent settings:
+
+```bash
+build-srcg/srcg run \
+  --parent /sys/fs/cgroup/srcg \
   --job training-A \
   --memory 2GiB \
   --swap 0 \
   --interval-ms 500 \
+  --log srcg-logs/training-A.log \
   -- python3 train.py
 ```
 
 The command remains in the foreground and supervises the training process.
-Samples are emitted as one-line `key=value` records containing
+The terminal's stdout and stderr belong to the training process; SRCG does not
+mix lifecycle or monitoring records into them. `--log FILE` is optional. When
+present, SRCG appends one-line `key=value` records to that text file containing
 `memory.current`, `memory.peak`, host `MemAvailable`, free swap, PSI values
-when supported, and OOM counters.
+when supported, and OOM counters. With no `--log`, telemetry is not persisted.
 
 Inspect or safely clean up a cgroup left after a supervisor crash:
 
@@ -76,5 +88,14 @@ build-srcg/srcg status --parent /sys/fs/cgroup/srcg --job training-A
 build-srcg/srcg cleanup --parent /sys/fs/cgroup/srcg --job training-A
 ```
 
-Cleanup fails while `cgroup.events` says the group is populated, while
-`cgroup.procs` contains a PID, or while `memory.current` is nonzero.
+Cleanup fails while `cgroup.events` says the group is populated or while
+`cgroup.procs` contains a PID. `memory.current` can remain nonzero after the
+last process exits because of page-cache or kernel charges; it is logged but
+is not used as a liveness test. The kernel reparents residual charges when the
+empty cgroup is removed.
+
+Reusing a job ID automatically removes an empty stale cgroup before creating
+the new run. An existing populated cgroup is treated as an active job and is
+never replaced. During a run, SRCG forwards `SIGINT`, `SIGTERM`, and `SIGHUP`
+to the child, waits for it, and performs normal cleanup. `SIGKILL` cannot be
+caught; a later run recovers the empty stale cgroup.

@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="875" viewBox="0 0 1500 875" role="img" aria-label="SRCG optimization history">
+<title>SRCG optimization history</title>
+<style>text{font-family:Inter,Segoe UI,Arial,sans-serif}.mono{font-family:ui-monospace,SFMono-Regular,Consolas,monospace}</style>
+<rect x="0.0" y="0.0" width="1500.0" height="875.0" fill="#FFFFFF" opacity="1.000" stroke="none" rx="0.0"/>
+<text x="24.0" y="38.0" font-size="25" text-anchor="start" font-weight="700" fill="#1F2933" >Milestone 3 optimization history — รอบพัฒนาที่สำเร็จและล้ม</text>
+<text x="24.0" y="64.0" font-size="12" text-anchor="start" font-weight="400" fill="#66737F" >optimization history = รอบหา failure/fix ไม่ใช่ final trials; makespan ของแถวแดงคือ time-to-failure</text>
+<text x="24.0" y="102.0" font-size="12" text-anchor="start" font-weight="700" fill="#1F2933" >Implementation variant</text>
+<text x="700.0" y="102.0" font-size="12" text-anchor="start" font-weight="700" fill="#1F2933" >Outcome</text>
+<text x="825.0" y="102.0" font-size="12" text-anchor="start" font-weight="700" fill="#1F2933" >Makespan</text>
+<text x="1195.0" y="102.0" font-size="12" text-anchor="start" font-weight="700" fill="#1F2933" >Peak RAM</text>
+<text x="24.0" y="136.0" font-size="11" text-anchor="start" font-weight="400" fill="#1F2933" class="mono">early-release-only-1</text>
+<text x="520.0" y="136.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >workers=0</text>
+<text x="700.0" y="136.0" font-size="12" text-anchor="start" font-weight="700" fill="#2A9D6F" >2/2</text>
+<rect x="825.0" y="121.0" width="285.0" height="20.0" fill="#E9EDF1" opacity="1.000" stroke="none" rx="4.0"/>
+<rect x="825.0" y="121.0" width="276.0" height="20.0" fill="#2A9D6F" opacity="0.780" stroke="none" rx="4.0"/>
+<text x="1118.0" y="136.0" font-size="10" text-anchor="start" font-weight="400" fill="#1F2933" >95.0s</text>
+<rect x="1195.0" y="121.0" width="220.0" height="20.0" fill="#E9EDF1" opacity="1.000" stroke="none" rx="4.0"/>
+<rect x="1195.0" y="121.0" width="162.6" height="20.0" fill="#2A9D6F" opacity="0.780" stroke="none" rx="4.0"/>
+<text x="1422.0" y="136.0" font-size="10" text-anchor="start" font-weight="400" fill="#1F2933" >3.69 GiB</text>
+<line x1="20.0" y1="150.0" x2="1480.0" y2="150.0" stroke="#EFF2F4" stroke-width="1.0"/>
+<text x="24.0" y="176.0" font-size="11" text-anchor="start" font-weight="400" fill="#1F2933" class="mono">legacy-control-1</text>
+<text x="520.0" y="176.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >workers=0</text>
+<text x="700.0" y="176.0" font-size="12" text-anchor="start" font-weight="700" fill="#2A9D6F" >2/2</text>
+<rect x="825.0" y="161.0" width="285.0" height="20.0" fill="#E9EDF1" opacity="1.000" stroke="none" rx="4.0"/>
+<rect x="825.0" y="161.0" width="259.6" height="20.0" fill="#2A9D6F" opacity="0.780" stroke="none" rx="4.0"/>
+<text x="1118.0" y="176.0" font-size="10" text-anchor="start" font-weight="400" fill="#1F2933" >89.4s</text>
+<rect x="1195.0" y="161.0" width="220.0" height="20.0" fill="#E9EDF1" opacity="1.000" stroke="none" rx="4.0"/>
+<rect x="1195.0" y="161.0" width="158.5" height="20.0" fill="#2A9D6F" opacity="0.780" stroke="none" rx="4.0"/>
+<text x="1422.0" y="176.0" font-size="10" text-anchor="start" font-weight="400" fill="#1F2933" >3.60 GiB</text>
+<line x1="20.0" y1="190.0" x2="1480.0" y2="190.0" stroke="#EFF2F4" stroke-width="1.0"/>
+<text x="24.0" y="216.0" font-size="11" text-anchor="start" font-weight="400" fill="#1F2933" class="mono">shrink-early-release-1</text>
+<text x="520.0" y="216.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >workers=0</text>
+<text x="700.0" y="216.0" font-size="12" text-anchor="start" font-weight="700" fill="#2A9D6F" >2/2</text>
+<rect x="825.0" y="201.0" width="285.0" height="20.0" fill="#E9EDF1" opacity="1.000" stroke="none" rx="4.0"/>
+<rect x="825.0" y="201.0" width="273.7" height="20.0" fill="#2A9D6F" opacity="0.780" stroke="none" rx="4.0"/>
+<text x="1118.0" y="216.0" font-size="10" text-anchor="start" font-weight="400" fill="#1F2933" >94.2s</text>
+<rect x="1195.0" y="201.0" width="220.0" height="20.0" fill="#E9EDF1" opacity="1.000" stroke="none" rx="4.0"/>
+<rect x="1195.0" y="201.0" width="158.7" height="20.0" fill="#2A9D6F" opacity="0.780" stroke="none" rx="4.0"/>
+<text x="1422.0" y="216.0" font-size="10" text-anchor="start" font-weight="400" fill="#1F2933" >3.61 GiB</text>
+<line x1="20.0" y1="230.0" x2="1480.0" y2="230.0" stroke="#EFF2F4" stroke-width="1.0"/>
+<text x="24.0" y="256.0" font-size="11" text-anchor="start" font-weight="400" fill="#1F2933" class="mono">shrink-only-1</text>
+<text x="520.0" y="256.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >workers=0</text>
+<text x="700.0" y="256.0" font-size="12" text-anchor="start" font-weight="700" fill="#2A9D6F" >2/2</text>
+<rect x="825.0" y="241.0" width="285.0" height="20.0" fill="#E9EDF1" opacity="1.000" stroke="none" rx="4.0"/>
+<rect x="825.0" y="241.0" width="268.9" height="20.0" fill="#2A9D6F" opacity="0.780" stroke="none" rx="4.0"/>
+<text x="1118.0" y="256.0" font-size="10" text-anchor="start" font-weight="400" fill="#1F2933" >92.5s</text>
+<rect x="1195.0" y="241.0" width="220.0" height="20.0" fill="#E9EDF1" opacity="1.000" stroke="none" rx="4.0"/>
+<rect x="1195.0" y="241.0" width="162.5" height="20.0" fill="#2A9D6F" opacity="0.780" stroke="none" rx="4.0"/>
+<text x="1422.0" y="256.0" font-size="10" text-anchor="start" font-weight="400" fill="#1F2933" >3.69 GiB</text>
+<line x1="20.0" y1="270.0" x2="1480.0" y2="270.0" stroke="#EFF2F4" stroke-width="1.0"/>
+<text x="24.0" y="296.0" font-size="11" text-anchor="start" font-weight="400" fill="#1F2933" class="mono">shrink-only-2</text>
+<text x="520.0" y="296.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >workers=0</text>
+<text x="700.0" y="296.0" font-size="12" text-anchor="start" font-weight="700" fill="#2A9D6F" >2/2</text>
+<rect x="825.0" y="281.0" width="285.0" height="20.0" fill="#E9EDF1" opacity="1.000" stroke="none" rx="4.0"/>
+<rect x="825.0" y="281.0" width="272.0" height="20.0" fill="#2A9D6F" opacity="0.780" stroke="none" rx="4.0"/>
+<text x="1118.0" y="296.0" font-size="10" text-anchor="start" font-weight="400" fill="#1F2933" >93.6s</text>
+<rect x="1195.0" y="281.0" width="220.0" height="20.0" fill="#E9EDF1" opacity="1.000" stroke="none" rx="4.0"/>
+<rect x="1195.0" y="281.0" width="162.5" height="20.0" fill="#2A9D6F" opacity="0.780" stroke="none" rx="4.0"/>
+<text x="1422.0" y="296.0" font-size="10" text-anchor="start" font-weight="400" fill="#1F2933" >3.69 GiB</text>
+<line x1="20.0" y1="310.0" x2="1480.0" y2="310.0" stroke="#EFF2F4" stroke-width="1.0"/>
+<text x="24.0" y="336.0" font-size="11" text-anchor="start" font-weight="400" fill="#1F2933" class="mono">workers2-feasible-5g-1</text>
+<text x="520.0" y="336.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >workers=2</text>
+<text x="700.0" y="336.0" font-size="12" text-anchor="start" font-weight="700" fill="#D1495B" >0/2</text>
+<rect x="825.0" y="321.0" width="285.0" height="20.0" fill="#E9EDF1" opacity="1.000" stroke="none" rx="4.0"/>
+<rect x="825.0" y="321.0" width="148.4" height="20.0" fill="#D1495B" opacity="0.780" stroke="none" rx="4.0"/>
+<text x="1118.0" y="336.0" font-size="10" text-anchor="start" font-weight="400" fill="#1F2933" >51.1s</text>
+<rect x="1195.0" y="321.0" width="220.0" height="20.0" fill="#E9EDF1" opacity="1.000" stroke="none" rx="4.0"/>
+<rect x="1195.0" y="321.0" width="191.0" height="20.0" fill="#2A9D6F" opacity="0.780" stroke="none" rx="4.0"/>
+<text x="1422.0" y="336.0" font-size="10" text-anchor="start" font-weight="400" fill="#1F2933" >4.34 GiB</text>
+<line x1="20.0" y1="350.0" x2="1480.0" y2="350.0" stroke="#EFF2F4" stroke-width="1.0"/>
+<text x="24.0" y="376.0" font-size="11" text-anchor="start" font-weight="400" fill="#1F2933" class="mono">workers2-legacy-1</text>
+<text x="520.0" y="376.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >workers=2</text>
+<text x="700.0" y="376.0" font-size="12" text-anchor="start" font-weight="700" fill="#D1495B" >0/2</text>
+<rect x="825.0" y="361.0" width="285.0" height="20.0" fill="#E9EDF1" opacity="1.000" stroke="none" rx="4.0"/>
+<rect x="825.0" y="361.0" width="12.7" height="20.0" fill="#D1495B" opacity="0.780" stroke="none" rx="4.0"/>
+<text x="1118.0" y="376.0" font-size="10" text-anchor="start" font-weight="400" fill="#1F2933" >4.4s</text>
+<rect x="1195.0" y="361.0" width="220.0" height="20.0" fill="#E9EDF1" opacity="1.000" stroke="none" rx="4.0"/>
+<rect x="1195.0" y="361.0" width="120.3" height="20.0" fill="#2A9D6F" opacity="0.780" stroke="none" rx="4.0"/>
+<text x="1422.0" y="376.0" font-size="10" text-anchor="start" font-weight="400" fill="#1F2933" >2.73 GiB</text>
+<line x1="20.0" y1="390.0" x2="1480.0" y2="390.0" stroke="#EFF2F4" stroke-width="1.0"/>
+<text x="24.0" y="416.0" font-size="11" text-anchor="start" font-weight="400" fill="#1F2933" class="mono">workers2-legacy-inflight-1</text>
+<text x="520.0" y="416.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >workers=2</text>
+<text x="700.0" y="416.0" font-size="12" text-anchor="start" font-weight="700" fill="#D1495B" >0/2</text>
+<rect x="825.0" y="401.0" width="285.0" height="20.0" fill="#E9EDF1" opacity="1.000" stroke="none" rx="4.0"/>
+<rect x="825.0" y="401.0" width="201.6" height="20.0" fill="#D1495B" opacity="0.780" stroke="none" rx="4.0"/>
+<text x="1118.0" y="416.0" font-size="10" text-anchor="start" font-weight="400" fill="#1F2933" >69.4s</text>
+<rect x="1195.0" y="401.0" width="220.0" height="20.0" fill="#E9EDF1" opacity="1.000" stroke="none" rx="4.0"/>
+<rect x="1195.0" y="401.0" width="157.4" height="20.0" fill="#2A9D6F" opacity="0.780" stroke="none" rx="4.0"/>
+<text x="1422.0" y="416.0" font-size="10" text-anchor="start" font-weight="400" fill="#1F2933" >3.58 GiB</text>
+<line x1="20.0" y1="430.0" x2="1480.0" y2="430.0" stroke="#EFF2F4" stroke-width="1.0"/>
+<text x="24.0" y="456.0" font-size="11" text-anchor="start" font-weight="400" fill="#1F2933" class="mono">workers2-normal-5g-1</text>
+<text x="520.0" y="456.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >workers=2</text>
+<text x="700.0" y="456.0" font-size="12" text-anchor="start" font-weight="700" fill="#D1495B" >1/2</text>
+<rect x="825.0" y="441.0" width="285.0" height="20.0" fill="#E9EDF1" opacity="1.000" stroke="none" rx="4.0"/>
+<rect x="825.0" y="441.0" width="123.8" height="20.0" fill="#D1495B" opacity="0.780" stroke="none" rx="4.0"/>
+<text x="1118.0" y="456.0" font-size="10" text-anchor="start" font-weight="400" fill="#1F2933" >42.6s</text>
+<rect x="1195.0" y="441.0" width="220.0" height="20.0" fill="#E9EDF1" opacity="1.000" stroke="none" rx="4.0"/>
+<rect x="1195.0" y="441.0" width="220.0" height="20.0" fill="#4C78A8" opacity="0.780" stroke="none" rx="4.0"/>
+<text x="1422.0" y="456.0" font-size="10" text-anchor="start" font-weight="400" fill="#1F2933" >5.00 GiB</text>
+<line x1="20.0" y1="470.0" x2="1480.0" y2="470.0" stroke="#EFF2F4" stroke-width="1.0"/>
+<text x="24.0" y="496.0" font-size="11" text-anchor="start" font-weight="400" fill="#1F2933" class="mono">workers2-release-aware-5g-1</text>
+<text x="520.0" y="496.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >workers=2</text>
+<text x="700.0" y="496.0" font-size="12" text-anchor="start" font-weight="700" fill="#D1495B" >1/2</text>
+<rect x="825.0" y="481.0" width="285.0" height="20.0" fill="#E9EDF1" opacity="1.000" stroke="none" rx="4.0"/>
+<rect x="825.0" y="481.0" width="285.0" height="20.0" fill="#D1495B" opacity="0.780" stroke="none" rx="4.0"/>
+<text x="1118.0" y="496.0" font-size="10" text-anchor="start" font-weight="400" fill="#1F2933" >98.1s</text>
+<rect x="1195.0" y="481.0" width="220.0" height="20.0" fill="#E9EDF1" opacity="1.000" stroke="none" rx="4.0"/>
+<rect x="1195.0" y="481.0" width="205.9" height="20.0" fill="#2A9D6F" opacity="0.780" stroke="none" rx="4.0"/>
+<text x="1422.0" y="496.0" font-size="10" text-anchor="start" font-weight="400" fill="#1F2933" >4.68 GiB</text>
+<line x1="20.0" y1="510.0" x2="1480.0" y2="510.0" stroke="#EFF2F4" stroke-width="1.0"/>
+<text x="24.0" y="536.0" font-size="11" text-anchor="start" font-weight="400" fill="#1F2933" class="mono">workers2-release-wait-5g-1</text>
+<text x="520.0" y="536.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >workers=2</text>
+<text x="700.0" y="536.0" font-size="12" text-anchor="start" font-weight="700" fill="#2A9D6F" >2/2</text>
+<rect x="825.0" y="521.0" width="285.0" height="20.0" fill="#E9EDF1" opacity="1.000" stroke="none" rx="4.0"/>
+<rect x="825.0" y="521.0" width="270.1" height="20.0" fill="#2A9D6F" opacity="0.780" stroke="none" rx="4.0"/>
+<text x="1118.0" y="536.0" font-size="10" text-anchor="start" font-weight="400" fill="#1F2933" >93.0s</text>
+<rect x="1195.0" y="521.0" width="220.0" height="20.0" fill="#E9EDF1" opacity="1.000" stroke="none" rx="4.0"/>
+<rect x="1195.0" y="521.0" width="197.5" height="20.0" fill="#2A9D6F" opacity="0.780" stroke="none" rx="4.0"/>
+<text x="1422.0" y="536.0" font-size="10" text-anchor="start" font-weight="400" fill="#1F2933" >4.49 GiB</text>
+<line x1="20.0" y1="550.0" x2="1480.0" y2="550.0" stroke="#EFF2F4" stroke-width="1.0"/>
+<text x="24.0" y="576.0" font-size="11" text-anchor="start" font-weight="400" fill="#1F2933" class="mono">workers2-sequential-diagnostic-1</text>
+<text x="520.0" y="576.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >workers=2</text>
+<text x="700.0" y="576.0" font-size="12" text-anchor="start" font-weight="700" fill="#2A9D6F" >2/2</text>
+<rect x="825.0" y="561.0" width="285.0" height="20.0" fill="#E9EDF1" opacity="1.000" stroke="none" rx="4.0"/>
+<rect x="825.0" y="561.0" width="231.6" height="20.0" fill="#2A9D6F" opacity="0.780" stroke="none" rx="4.0"/>
+<text x="1118.0" y="576.0" font-size="10" text-anchor="start" font-weight="400" fill="#1F2933" >79.7s</text>
+<rect x="1195.0" y="561.0" width="220.0" height="20.0" fill="#E9EDF1" opacity="1.000" stroke="none" rx="4.0"/>
+<rect x="1195.0" y="561.0" width="176.0" height="20.0" fill="#E3A62F" opacity="0.780" stroke="none" rx="4.0"/>
+<text x="1422.0" y="576.0" font-size="10" text-anchor="start" font-weight="400" fill="#1F2933" >4.00 GiB</text>
+<line x1="20.0" y1="590.0" x2="1480.0" y2="590.0" stroke="#EFF2F4" stroke-width="1.0"/>
+<text x="24.0" y="616.0" font-size="11" text-anchor="start" font-weight="400" fill="#1F2933" class="mono">workers2-shrink-inflight-1</text>
+<text x="520.0" y="616.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >workers=2</text>
+<text x="700.0" y="616.0" font-size="12" text-anchor="start" font-weight="700" fill="#D1495B" >0/2</text>
+<rect x="825.0" y="601.0" width="285.0" height="20.0" fill="#E9EDF1" opacity="1.000" stroke="none" rx="4.0"/>
+<rect x="825.0" y="601.0" width="111.2" height="20.0" fill="#D1495B" opacity="0.780" stroke="none" rx="4.0"/>
+<text x="1118.0" y="616.0" font-size="10" text-anchor="start" font-weight="400" fill="#1F2933" >38.3s</text>
+<rect x="1195.0" y="601.0" width="220.0" height="20.0" fill="#E9EDF1" opacity="1.000" stroke="none" rx="4.0"/>
+<rect x="1195.0" y="601.0" width="135.7" height="20.0" fill="#2A9D6F" opacity="0.780" stroke="none" rx="4.0"/>
+<text x="1422.0" y="616.0" font-size="10" text-anchor="start" font-weight="400" fill="#1F2933" >3.08 GiB</text>
+<line x1="20.0" y1="630.0" x2="1480.0" y2="630.0" stroke="#EFF2F4" stroke-width="1.0"/>
+<text x="24.0" y="656.0" font-size="11" text-anchor="start" font-weight="400" fill="#1F2933" class="mono">workers2-startup-aware-1</text>
+<text x="520.0" y="656.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >workers=2</text>
+<text x="700.0" y="656.0" font-size="12" text-anchor="start" font-weight="700" fill="#D1495B" >0/2</text>
+<rect x="825.0" y="641.0" width="285.0" height="20.0" fill="#E9EDF1" opacity="1.000" stroke="none" rx="4.0"/>
+<rect x="825.0" y="641.0" width="118.9" height="20.0" fill="#D1495B" opacity="0.780" stroke="none" rx="4.0"/>
+<text x="1118.0" y="656.0" font-size="10" text-anchor="start" font-weight="400" fill="#1F2933" >40.9s</text>
+<rect x="1195.0" y="641.0" width="220.0" height="20.0" fill="#E9EDF1" opacity="1.000" stroke="none" rx="4.0"/>
+<rect x="1195.0" y="641.0" width="137.3" height="20.0" fill="#2A9D6F" opacity="0.780" stroke="none" rx="4.0"/>
+<text x="1422.0" y="656.0" font-size="10" text-anchor="start" font-weight="400" fill="#1F2933" >3.12 GiB</text>
+<line x1="20.0" y1="670.0" x2="1480.0" y2="670.0" stroke="#EFF2F4" stroke-width="1.0"/>
+<text x="24.0" y="696.0" font-size="11" text-anchor="start" font-weight="400" fill="#1F2933" class="mono">workers2-worker-shrink-filecache-1</text>
+<text x="520.0" y="696.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >workers=2</text>
+<text x="700.0" y="696.0" font-size="12" text-anchor="start" font-weight="700" fill="#D1495B" >0/2</text>
+<rect x="825.0" y="681.0" width="285.0" height="20.0" fill="#E9EDF1" opacity="1.000" stroke="none" rx="4.0"/>
+<rect x="825.0" y="681.0" width="114.0" height="20.0" fill="#D1495B" opacity="0.780" stroke="none" rx="4.0"/>
+<text x="1118.0" y="696.0" font-size="10" text-anchor="start" font-weight="400" fill="#1F2933" >39.2s</text>
+<rect x="1195.0" y="681.0" width="220.0" height="20.0" fill="#E9EDF1" opacity="1.000" stroke="none" rx="4.0"/>
+<rect x="1195.0" y="681.0" width="137.3" height="20.0" fill="#2A9D6F" opacity="0.780" stroke="none" rx="4.0"/>
+<text x="1422.0" y="696.0" font-size="10" text-anchor="start" font-weight="400" fill="#1F2933" >3.12 GiB</text>
+<line x1="20.0" y1="710.0" x2="1480.0" y2="710.0" stroke="#EFF2F4" stroke-width="1.0"/>
+<text x="24.0" y="736.0" font-size="11" text-anchor="start" font-weight="400" fill="#1F2933" class="mono">workers2-worker-shrink-safety-1</text>
+<text x="520.0" y="736.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >workers=2</text>
+<text x="700.0" y="736.0" font-size="12" text-anchor="start" font-weight="700" fill="#D1495B" >0/2</text>
+<rect x="825.0" y="721.0" width="285.0" height="20.0" fill="#E9EDF1" opacity="1.000" stroke="none" rx="4.0"/>
+<rect x="825.0" y="721.0" width="118.0" height="20.0" fill="#D1495B" opacity="0.780" stroke="none" rx="4.0"/>
+<text x="1118.0" y="736.0" font-size="10" text-anchor="start" font-weight="400" fill="#1F2933" >40.6s</text>
+<rect x="1195.0" y="721.0" width="220.0" height="20.0" fill="#E9EDF1" opacity="1.000" stroke="none" rx="4.0"/>
+<rect x="1195.0" y="721.0" width="135.3" height="20.0" fill="#2A9D6F" opacity="0.780" stroke="none" rx="4.0"/>
+<text x="1422.0" y="736.0" font-size="10" text-anchor="start" font-weight="400" fill="#1F2933" >3.08 GiB</text>
+<line x1="20.0" y1="750.0" x2="1480.0" y2="750.0" stroke="#EFF2F4" stroke-width="1.0"/>
+<text x="24.0" y="776.0" font-size="11" text-anchor="start" font-weight="400" fill="#1F2933" class="mono">workers2-worker-shrink-safety-2</text>
+<text x="520.0" y="776.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >workers=2</text>
+<text x="700.0" y="776.0" font-size="12" text-anchor="start" font-weight="700" fill="#D1495B" >0/2</text>
+<rect x="825.0" y="761.0" width="285.0" height="20.0" fill="#E9EDF1" opacity="1.000" stroke="none" rx="4.0"/>
+<rect x="825.0" y="761.0" width="16.7" height="20.0" fill="#D1495B" opacity="0.780" stroke="none" rx="4.0"/>
+<text x="1118.0" y="776.0" font-size="10" text-anchor="start" font-weight="400" fill="#1F2933" >5.7s</text>
+<rect x="1195.0" y="761.0" width="220.0" height="20.0" fill="#E9EDF1" opacity="1.000" stroke="none" rx="4.0"/>
+<rect x="1195.0" y="761.0" width="137.4" height="20.0" fill="#2A9D6F" opacity="0.780" stroke="none" rx="4.0"/>
+<text x="1422.0" y="776.0" font-size="10" text-anchor="start" font-weight="400" fill="#1F2933" >3.12 GiB</text>
+<line x1="20.0" y1="790.0" x2="1480.0" y2="790.0" stroke="#EFF2F4" stroke-width="1.0"/>
+</svg>

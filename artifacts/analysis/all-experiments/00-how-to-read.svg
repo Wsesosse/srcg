@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1810" height="3068" viewBox="0 0 1810 3068" role="img" aria-label="SRCG graph glossary and reading guide">
+<title>SRCG graph glossary and reading guide</title>
+<style>text{font-family:Inter,Segoe UI,Arial,sans-serif}.mono{font-family:ui-monospace,SFMono-Regular,Consolas,monospace}</style>
+<rect x="0.0" y="0.0" width="1810.0" height="3068.0" fill="#FFFFFF" opacity="1.000" stroke="none" rx="0.0"/>
+<text x="30.0" y="42.0" font-size="27" text-anchor="start" font-weight="700" fill="#1F2933" >เริ่มอ่านตรงนี้: คำศัพท์และวิธีไม่ให้ตีความกราฟผิด</text>
+<text x="30.0" y="72.0" font-size="13" text-anchor="start" font-weight="400" fill="#66737F" >ทุกคำเทคนิคที่ใช้ในกราฟถูก define ด้านล่าง กราฟผลหลักใช้ English label เดิมเพื่อให้ตรงกับชื่อ field ใน artifact</text>
+<rect x="30.0" y="92.0" width="1750.0" height="58.0" fill="#FFF3E0" opacity="1.000" stroke="none" rx="8.0"/>
+<text x="48.0" y="116.0" font-size="12" text-anchor="start" font-weight="700" fill="#8A5700" >กฎสำคัญ</text>
+<text x="48.0" y="138.0" font-size="12" text-anchor="start" font-weight="400" fill="#8A5700" >เวลา time-to-failure ของงานที่ล้มไม่ใช่ความเร็ว และ model size ไม่เท่ากับ RAM ทั้งหมดของ training</text>
+<text x="30.0" y="175.0" font-size="12" text-anchor="start" font-weight="700" fill="#203040" >framework</text>
+<text x="30.0" y="195.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >ชุดโปรแกรมและ API ที่ช่วยควบคุมวิธีรันงาน; SRCG ไม่ได้แทน model หรือ training</text>
+<text x="30.0" y="211.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >algorithm ของ PyTorch</text>
+<line x1="30.0" y1="245.0" x2="595.0" y2="245.0" stroke="#EEF1F4" stroke-width="1.0"/>
+<text x="30.0" y="257.0" font-size="12" text-anchor="start" font-weight="700" fill="#203040" >PyTorch</text>
+<text x="30.0" y="277.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >library สำหรับสร้าง model, โหลด data, คำนวณ gradient และปรับ parameters ระหว่าง</text>
+<text x="30.0" y="293.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >training</text>
+<line x1="30.0" y1="327.0" x2="595.0" y2="327.0" stroke="#EEF1F4" stroke-width="1.0"/>
+<text x="30.0" y="339.0" font-size="12" text-anchor="start" font-weight="700" fill="#203040" >SRCG</text>
+<text x="30.0" y="359.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >framework ที่ครอบ PyTorch เพื่อควบคุม host RAM ด้วย cgroup และหน่วงการสร้าง</text>
+<text x="30.0" y="375.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >batch เมื่อ RAM ไม่พอ</text>
+<line x1="30.0" y1="409.0" x2="595.0" y2="409.0" stroke="#EEF1F4" stroke-width="1.0"/>
+<text x="30.0" y="421.0" font-size="12" text-anchor="start" font-weight="700" fill="#203040" >resource</text>
+<text x="30.0" y="441.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >สิ่งที่มี capacity จำกัดและโปรแกรมใช้ เช่น CPU time, host RAM หรือ GPU memory</text>
+<line x1="30.0" y1="491.0" x2="595.0" y2="491.0" stroke="#EEF1F4" stroke-width="1.0"/>
+<text x="30.0" y="503.0" font-size="12" text-anchor="start" font-weight="700" fill="#203040" >process</text>
+<text x="30.0" y="523.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >โปรแกรมหนึ่ง instance ที่ Linux กำลังรันและมี process ID ของตัวเอง</text>
+<line x1="30.0" y1="573.0" x2="595.0" y2="573.0" stroke="#EEF1F4" stroke-width="1.0"/>
+<text x="30.0" y="585.0" font-size="12" text-anchor="start" font-weight="700" fill="#203040" >process tree</text>
+<text x="30.0" y="605.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >main process และ child processes ทั้งหมดที่มันสร้างต่อกันเป็นลำดับ</text>
+<line x1="30.0" y1="655.0" x2="595.0" y2="655.0" stroke="#EEF1F4" stroke-width="1.0"/>
+<text x="30.0" y="667.0" font-size="12" text-anchor="start" font-weight="700" fill="#203040" >CPU</text>
+<text x="30.0" y="687.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >หน่วยประมวลผลหลักของเครื่อง; preprocessing และ DataLoader มักทำงานฝั่งนี้</text>
+<line x1="30.0" y1="737.0" x2="595.0" y2="737.0" stroke="#EEF1F4" stroke-width="1.0"/>
+<text x="30.0" y="749.0" font-size="12" text-anchor="start" font-weight="700" fill="#203040" >GPU</text>
+<text x="30.0" y="769.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >หน่วยประมวลผลแบบขนานที่ใช้เร่ง model training และมี VRAM ของตัวเอง</text>
+<line x1="30.0" y1="819.0" x2="595.0" y2="819.0" stroke="#EEF1F4" stroke-width="1.0"/>
+<text x="30.0" y="831.0" font-size="12" text-anchor="start" font-weight="700" fill="#203040" >RAM</text>
+<text x="30.0" y="851.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >หน่วยความจำหลักที่ CPU และ Linux processes ใช้; ข้อมูลหายเมื่อปิดเครื่อง</text>
+<line x1="30.0" y1="901.0" x2="595.0" y2="901.0" stroke="#EEF1F4" stroke-width="1.0"/>
+<text x="30.0" y="913.0" font-size="12" text-anchor="start" font-weight="700" fill="#203040" >CUDA</text>
+<text x="30.0" y="933.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >ระบบ software ของ NVIDIA ที่ PyTorch ใช้คำนวณบน GPU และจัดการ GPU memory</text>
+<line x1="30.0" y1="983.0" x2="595.0" y2="983.0" stroke="#EEF1F4" stroke-width="1.0"/>
+<text x="30.0" y="995.0" font-size="12" text-anchor="start" font-weight="700" fill="#203040" >tensor</text>
+<text x="30.0" y="1015.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >array หลายมิติที่ PyTorch ใช้เก็บ input, parameter, activation และ gradient</text>
+<line x1="30.0" y1="1065.0" x2="595.0" y2="1065.0" stroke="#EEF1F4" stroke-width="1.0"/>
+<text x="30.0" y="1077.0" font-size="12" text-anchor="start" font-weight="700" fill="#203040" >allocator</text>
+<text x="30.0" y="1097.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >ส่วนของ runtime ที่ขอ คืน และ cache memory ให้ tensors หรือ objects</text>
+<line x1="30.0" y1="1147.0" x2="595.0" y2="1147.0" stroke="#EEF1F4" stroke-width="1.0"/>
+<text x="30.0" y="1159.0" font-size="12" text-anchor="start" font-weight="700" fill="#203040" >cache</text>
+<text x="30.0" y="1179.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >memory ที่ยังถือไว้เพื่อใช้ซ้ำให้เร็วขึ้น แม้ข้อมูลเดิมอาจไม่ถูกใช้งานแล้ว</text>
+<line x1="30.0" y1="1229.0" x2="595.0" y2="1229.0" stroke="#EEF1F4" stroke-width="1.0"/>
+<text x="30.0" y="1241.0" font-size="12" text-anchor="start" font-weight="700" fill="#203040" >dataset</text>
+<text x="30.0" y="1261.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >ชุด samples ทั้งหมดที่ใช้ใน workload เช่นภาพ COCO หรือ CT volumes ของ Lung</text>
+<line x1="30.0" y1="1311.0" x2="595.0" y2="1311.0" stroke="#EEF1F4" stroke-width="1.0"/>
+<text x="30.0" y="1323.0" font-size="12" text-anchor="start" font-weight="700" fill="#203040" >sample</text>
+<text x="30.0" y="1343.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >ข้อมูลหนึ่งรายการจาก dataset เช่นภาพหนึ่งภาพหรือ CT volume หนึ่งชุด</text>
+<line x1="30.0" y1="1393.0" x2="595.0" y2="1393.0" stroke="#EEF1F4" stroke-width="1.0"/>
+<text x="30.0" y="1405.0" font-size="12" text-anchor="start" font-weight="700" fill="#203040" >training</text>
+<text x="30.0" y="1425.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >กระบวนการให้ model คำนวณ loss, gradient และปรับ parameters ซ้ำหลาย steps</text>
+<line x1="30.0" y1="1475.0" x2="595.0" y2="1475.0" stroke="#EEF1F4" stroke-width="1.0"/>
+<text x="30.0" y="1487.0" font-size="12" text-anchor="start" font-weight="700" fill="#203040" >training step</text>
+<text x="30.0" y="1507.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >หนึ่งรอบที่ใช้ batch ทำ forward, คำนวณ loss/backward และให้ optimizer ปรับ</text>
+<text x="30.0" y="1523.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >parameters</text>
+<line x1="30.0" y1="1557.0" x2="595.0" y2="1557.0" stroke="#EEF1F4" stroke-width="1.0"/>
+<text x="30.0" y="1569.0" font-size="12" text-anchor="start" font-weight="700" fill="#203040" >epoch</text>
+<text x="30.0" y="1589.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >การที่ training ใช้ samples ตามแผนจนครบ dataset หนึ่งรอบ</text>
+<line x1="30.0" y1="1639.0" x2="595.0" y2="1639.0" stroke="#EEF1F4" stroke-width="1.0"/>
+<text x="30.0" y="1651.0" font-size="12" text-anchor="start" font-weight="700" fill="#203040" >optimizer</text>
+<text x="30.0" y="1671.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >algorithm ที่ใช้ gradient ปรับ model parameters เช่น SGD หรือ AdamW</text>
+<line x1="30.0" y1="1721.0" x2="595.0" y2="1721.0" stroke="#EEF1F4" stroke-width="1.0"/>
+<text x="30.0" y="1733.0" font-size="12" text-anchor="start" font-weight="700" fill="#203040" >gradient</text>
+<text x="30.0" y="1753.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >ค่าที่บอกทิศทางและขนาดการเปลี่ยน parameter เพื่อลด loss</text>
+<line x1="30.0" y1="1803.0" x2="595.0" y2="1803.0" stroke="#EEF1F4" stroke-width="1.0"/>
+<text x="30.0" y="1815.0" font-size="12" text-anchor="start" font-weight="700" fill="#203040" >activation</text>
+<text x="30.0" y="1835.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >tensor ชั่วคราวที่ layer ของ model สร้างระหว่าง forward/backward</text>
+<line x1="30.0" y1="1885.0" x2="595.0" y2="1885.0" stroke="#EEF1F4" stroke-width="1.0"/>
+<text x="30.0" y="1897.0" font-size="12" text-anchor="start" font-weight="700" fill="#203040" >loss</text>
+<text x="30.0" y="1917.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >ตัวเลขที่วัดความผิดพลาดของ prediction และเป็นเป้าหมายให้ optimizer ลดลง</text>
+<line x1="30.0" y1="1967.0" x2="595.0" y2="1967.0" stroke="#EEF1F4" stroke-width="1.0"/>
+<text x="30.0" y="1979.0" font-size="12" text-anchor="start" font-weight="700" fill="#203040" >PyTorch baseline / baseline</text>
+<text x="30.0" y="1999.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >training เดิมที่ไม่ใช้ SRCG reservation; อาจยังอยู่ใน cgroup เพื่อให้วัด RAM</text>
+<text x="30.0" y="2015.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >ภายใต้ boundary เดียวกัน</text>
+<line x1="30.0" y1="2049.0" x2="595.0" y2="2049.0" stroke="#EEF1F4" stroke-width="1.0"/>
+<text x="30.0" y="2061.0" font-size="12" text-anchor="start" font-weight="700" fill="#203040" >mode</text>
+<text x="30.0" y="2081.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >วิธีจัด resource ใน scenario เช่น baseline, sequential, fixed quota หรือ SRCG</text>
+<line x1="30.0" y1="2131.0" x2="595.0" y2="2131.0" stroke="#EEF1F4" stroke-width="1.0"/>
+<text x="30.0" y="2143.0" font-size="12" text-anchor="start" font-weight="700" fill="#203040" >fixed quota / fixed</text>
+<text x="30.0" y="2163.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >mode ที่ memory limit คงที่และ job ยืม Reserved Memory ไม่ได้</text>
+<line x1="30.0" y1="2213.0" x2="595.0" y2="2213.0" stroke="#EEF1F4" stroke-width="1.0"/>
+<text x="30.0" y="2225.0" font-size="12" text-anchor="start" font-weight="700" fill="#203040" >not_logged / unknown</text>
+<text x="30.0" y="2245.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >artifact รุ่นนั้นไม่ได้บันทึกค่าดังกล่าว จึงไม่เดาหรือแทนด้วยศูนย์</text>
+<line x1="30.0" y1="2295.0" x2="595.0" y2="2295.0" stroke="#EEF1F4" stroke-width="1.0"/>
+<text x="30.0" y="2307.0" font-size="12" text-anchor="start" font-weight="700" fill="#203040" >workload</text>
+<text x="30.0" y="2327.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >งานทดลองหนึ่งชนิด ซึ่งรวม dataset, model, preprocessing และ training</text>
+<text x="30.0" y="2343.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >configuration</text>
+<line x1="30.0" y1="2377.0" x2="595.0" y2="2377.0" stroke="#EEF1F4" stroke-width="1.0"/>
+<text x="30.0" y="2389.0" font-size="12" text-anchor="start" font-weight="700" fill="#203040" >configuration</text>
+<text x="30.0" y="2409.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >ชุดค่าที่กำหนดวิธีรัน เช่น batch size, epochs, optimizer, workers และ memory</text>
+<text x="30.0" y="2425.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >limit</text>
+<line x1="30.0" y1="2459.0" x2="595.0" y2="2459.0" stroke="#EEF1F4" stroke-width="1.0"/>
+<text x="30.0" y="2471.0" font-size="12" text-anchor="start" font-weight="700" fill="#203040" >architecture</text>
+<text x="30.0" y="2491.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >โครงสร้าง layers และการเชื่อมต่อภายใน model ซึ่งกำหนดชนิดและจำนวน parameters</text>
+<line x1="30.0" y1="2541.0" x2="595.0" y2="2541.0" stroke="#EEF1F4" stroke-width="1.0"/>
+<text x="30.0" y="2553.0" font-size="12" text-anchor="start" font-weight="700" fill="#203040" >model</text>
+<text x="30.0" y="2573.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >โครงข่ายประสาทที่รับ input แล้วคำนวณ prediction เช่น ResNet-50 หรือ 3D U-Net</text>
+<line x1="30.0" y1="2623.0" x2="595.0" y2="2623.0" stroke="#EEF1F4" stroke-width="1.0"/>
+<text x="30.0" y="2635.0" font-size="12" text-anchor="start" font-weight="700" fill="#203040" >model parameter</text>
+<text x="30.0" y="2655.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >ค่าตัวเลขที่ model เรียนรู้ระหว่าง training เช่น weight และ bias</text>
+<line x1="30.0" y1="2705.0" x2="595.0" y2="2705.0" stroke="#EEF1F4" stroke-width="1.0"/>
+<text x="30.0" y="2717.0" font-size="12" text-anchor="start" font-weight="700" fill="#203040" >model size</text>
+<text x="30.0" y="2737.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >ในรายงานนี้หมายถึงจำนวน model parameters ไม่ใช่ RAM ทั้งหมดที่ training ใช้</text>
+<line x1="30.0" y1="2787.0" x2="595.0" y2="2787.0" stroke="#EEF1F4" stroke-width="1.0"/>
+<text x="30.0" y="2799.0" font-size="12" text-anchor="start" font-weight="700" fill="#203040" >FP32 weight bytes</text>
+<text x="30.0" y="2819.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >พื้นที่ของ parameters อย่างเดียวเมื่อแต่ละค่าเป็นเลข 32-bit หรือ 4 bytes; ไม่รวม</text>
+<text x="30.0" y="2835.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >gradient/optimizer/activation</text>
+<line x1="30.0" y1="2869.0" x2="595.0" y2="2869.0" stroke="#EEF1F4" stroke-width="1.0"/>
+<text x="30.0" y="2881.0" font-size="12" text-anchor="start" font-weight="700" fill="#203040" >ResNet-50</text>
+<text x="30.0" y="2901.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >โมเดล convolution 2D ที่ใช้กับ COCO ใน full-model run</text>
+<line x1="30.0" y1="2951.0" x2="595.0" y2="2951.0" stroke="#EEF1F4" stroke-width="1.0"/>
+<text x="620.0" y="175.0" font-size="12" text-anchor="start" font-weight="700" fill="#203040" >3D U-Net</text>
+<text x="620.0" y="195.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >โมเดล segmentation 3D ที่ใช้กับ Task06_Lung ใน full-model run</text>
+<line x1="620.0" y1="245.0" x2="1185.0" y2="245.0" stroke="#EEF1F4" stroke-width="1.0"/>
+<text x="620.0" y="257.0" font-size="12" text-anchor="start" font-weight="700" fill="#203040" >COCO val2017</text>
+<text x="620.0" y="277.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >ชุดภาพ JPEG 2D ที่ใช้ทดสอบ decode/resize และ training pipeline</text>
+<line x1="620.0" y1="327.0" x2="1185.0" y2="327.0" stroke="#EEF1F4" stroke-width="1.0"/>
+<text x="620.0" y="339.0" font-size="12" text-anchor="start" font-weight="700" fill="#203040" >JPEG</text>
+<text x="620.0" y="359.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >รูปแบบไฟล์ภาพ 2D แบบบีบอัด; ต้อง decode ก่อนจึงได้ pixel array</text>
+<line x1="620.0" y1="409.0" x2="1185.0" y2="409.0" stroke="#EEF1F4" stroke-width="1.0"/>
+<text x="620.0" y="421.0" font-size="12" text-anchor="start" font-weight="700" fill="#203040" >Task06_Lung</text>
+<text x="620.0" y="441.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >ชุด CT และ mask 3D ที่ใช้ทดสอบ RAM spike จากการโหลด volume ทั้งก้อน</text>
+<line x1="620.0" y1="491.0" x2="1185.0" y2="491.0" stroke="#EEF1F4" stroke-width="1.0"/>
+<text x="620.0" y="503.0" font-size="12" text-anchor="start" font-weight="700" fill="#203040" >CT</text>
+<text x="620.0" y="523.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >Computed Tomography: ภาพทางการแพทย์สามมิติที่เก็บค่าความหนาแน่นของเนื้อเยื่อ</text>
+<line x1="620.0" y1="573.0" x2="1185.0" y2="573.0" stroke="#EEF1F4" stroke-width="1.0"/>
+<text x="620.0" y="585.0" font-size="12" text-anchor="start" font-weight="700" fill="#203040" >segmentation mask</text>
+<text x="620.0" y="605.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >array ที่ระบุ class ของแต่ละ pixel/voxel เพื่อใช้เป็น target ของ segmentation</text>
+<text x="620.0" y="621.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >model</text>
+<line x1="620.0" y1="655.0" x2="1185.0" y2="655.0" stroke="#EEF1F4" stroke-width="1.0"/>
+<text x="620.0" y="667.0" font-size="12" text-anchor="start" font-weight="700" fill="#203040" >pixel / voxel</text>
+<text x="620.0" y="687.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >pixel คือจุดข้อมูลภาพ 2D; voxel คือจุดข้อมูลปริมาตร 3D</text>
+<line x1="620.0" y1="737.0" x2="1185.0" y2="737.0" stroke="#EEF1F4" stroke-width="1.0"/>
+<text x="620.0" y="749.0" font-size="12" text-anchor="start" font-weight="700" fill="#203040" >RAM spike / peak</text>
+<text x="620.0" y="769.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >ช่วงสั้นที่การใช้ RAM เพิ่มสูงกว่าปกติ; peak คือค่าสูงสุดที่วัดได้ตลอดช่วง</text>
+<line x1="620.0" y1="819.0" x2="1185.0" y2="819.0" stroke="#EEF1F4" stroke-width="1.0"/>
+<text x="620.0" y="831.0" font-size="12" text-anchor="start" font-weight="700" fill="#203040" >NIfTI</text>
+<text x="620.0" y="851.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >รูปแบบไฟล์ medical image 3D; การแตกไฟล์ .nii.gz อาจสร้าง array ใน RAM ขนาดใหญ่</text>
+<line x1="620.0" y1="901.0" x2="1185.0" y2="901.0" stroke="#EEF1F4" stroke-width="1.0"/>
+<text x="620.0" y="913.0" font-size="12" text-anchor="start" font-weight="700" fill="#203040" >decode</text>
+<text x="620.0" y="933.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >อ่านไฟล์บีบอัดแล้วสร้างข้อมูล pixels/voxels จริงใน RAM</text>
+<line x1="620.0" y1="983.0" x2="1185.0" y2="983.0" stroke="#EEF1F4" stroke-width="1.0"/>
+<text x="620.0" y="995.0" font-size="12" text-anchor="start" font-weight="700" fill="#203040" >resize</text>
+<text x="620.0" y="1015.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >เปลี่ยนขนาด image/volume; ระหว่างทำอาจมี input และ output อยู่ใน RAM พร้อมกัน</text>
+<line x1="620.0" y1="1065.0" x2="1185.0" y2="1065.0" stroke="#EEF1F4" stroke-width="1.0"/>
+<text x="620.0" y="1077.0" font-size="12" text-anchor="start" font-weight="700" fill="#203040" >batch</text>
+<text x="620.0" y="1097.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >กลุ่ม samples ที่ DataLoader ส่งให้ model ประมวลผลหนึ่ง training step</text>
+<line x1="620.0" y1="1147.0" x2="1185.0" y2="1147.0" stroke="#EEF1F4" stroke-width="1.0"/>
+<text x="620.0" y="1159.0" font-size="12" text-anchor="start" font-weight="700" fill="#203040" >DataLoader worker</text>
+<text x="620.0" y="1179.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >process ที่ PyTorch ใช้โหลดและ preprocess data; workers หลายตัวอาจใช้ RAM</text>
+<text x="620.0" y="1195.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >พร้อมกัน</text>
+<line x1="620.0" y1="1229.0" x2="1185.0" y2="1229.0" stroke="#EEF1F4" stroke-width="1.0"/>
+<text x="620.0" y="1241.0" font-size="12" text-anchor="start" font-weight="700" fill="#203040" >prefetch</text>
+<text x="620.0" y="1261.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >การเตรียม batches ล่วงหน้าก่อน model ขอใช้ ซึ่งเพิ่มจำนวน batches ที่ค้างใน RAM</text>
+<line x1="620.0" y1="1311.0" x2="1185.0" y2="1311.0" stroke="#EEF1F4" stroke-width="1.0"/>
+<text x="620.0" y="1323.0" font-size="12" text-anchor="start" font-weight="700" fill="#203040" >job</text>
+<text x="620.0" y="1343.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >process tree ของ training หนึ่งงาน รวม main process และ DataLoader workers</text>
+<line x1="620.0" y1="1393.0" x2="1185.0" y2="1393.0" stroke="#EEF1F4" stroke-width="1.0"/>
+<text x="620.0" y="1405.0" font-size="12" text-anchor="start" font-weight="700" fill="#203040" >concurrent</text>
+<text x="620.0" y="1425.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >หลาย jobs ทำงานในช่วงเวลาเดียวกัน</text>
+<line x1="620.0" y1="1475.0" x2="1185.0" y2="1475.0" stroke="#EEF1F4" stroke-width="1.0"/>
+<text x="620.0" y="1487.0" font-size="12" text-anchor="start" font-weight="700" fill="#203040" >sequential</text>
+<text x="620.0" y="1507.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >รัน job แรกให้จบก่อนจึงเริ่ม job ถัดไป</text>
+<line x1="620.0" y1="1557.0" x2="1185.0" y2="1557.0" stroke="#EEF1F4" stroke-width="1.0"/>
+<text x="620.0" y="1569.0" font-size="12" text-anchor="start" font-weight="700" fill="#203040" >scenario</text>
+<text x="620.0" y="1589.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >ชุดเงื่อนไขทดลองหนึ่งแบบ เช่น RAM limit, จำนวน jobs, mode และ workload</text>
+<line x1="620.0" y1="1639.0" x2="1185.0" y2="1639.0" stroke="#EEF1F4" stroke-width="1.0"/>
+<text x="620.0" y="1651.0" font-size="12" text-anchor="start" font-weight="700" fill="#203040" >trial (n=)</text>
+<text x="620.0" y="1671.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >การทำ scenario ซ้ำหนึ่งรอบ; n คือจำนวนรอบที่นำมารวม</text>
+<line x1="620.0" y1="1721.0" x2="1185.0" y2="1721.0" stroke="#EEF1F4" stroke-width="1.0"/>
+<text x="620.0" y="1733.0" font-size="12" text-anchor="start" font-weight="700" fill="#203040" >attempt</text>
+<text x="620.0" y="1753.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >การเริ่ม process หนึ่งครั้งใน recovery experiment; งานเดียวอาจมีหลาย attempts</text>
+<line x1="620.0" y1="1803.0" x2="1185.0" y2="1803.0" stroke="#EEF1F4" stroke-width="1.0"/>
+<text x="620.0" y="1815.0" font-size="12" text-anchor="start" font-weight="700" fill="#203040" >artifact</text>
+<text x="620.0" y="1835.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >ไฟล์หลักฐานจากการรัน เช่น log, summary, memory.events หรือ checkpoint</text>
+<line x1="620.0" y1="1885.0" x2="1185.0" y2="1885.0" stroke="#EEF1F4" stroke-width="1.0"/>
+<text x="620.0" y="1897.0" font-size="12" text-anchor="start" font-weight="700" fill="#203040" >valid</text>
+<text x="620.0" y="1917.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >รอบที่ไม่มี INVALID.txt และผ่านเงื่อนไขที่กำหนดสำหรับกราฟนั้น</text>
+<line x1="620.0" y1="1967.0" x2="1185.0" y2="1967.0" stroke="#EEF1F4" stroke-width="1.0"/>
+<text x="620.0" y="1979.0" font-size="12" text-anchor="start" font-weight="700" fill="#203040" >invalid</text>
+<text x="620.0" y="1999.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >รอบที่พบปัญหาการทดลองหรือ implementation จึงเก็บหลักฐานไว้แต่ห้ามใช้สรุปผล</text>
+<line x1="620.0" y1="2049.0" x2="1185.0" y2="2049.0" stroke="#EEF1F4" stroke-width="1.0"/>
+<text x="620.0" y="2061.0" font-size="12" text-anchor="start" font-weight="700" fill="#203040" >canonical comparison</text>
+<text x="620.0" y="2081.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >ชุดผลหลักที่คัดเฉพาะ modes ซึ่ง workload และเงื่อนไขสำคัญเทียบกันได้</text>
+<line x1="620.0" y1="2131.0" x2="1185.0" y2="2131.0" stroke="#EEF1F4" stroke-width="1.0"/>
+<text x="620.0" y="2143.0" font-size="12" text-anchor="start" font-weight="700" fill="#203040" >smoke test</text>
+<text x="620.0" y="2163.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >รอบสั้นเพื่อเช็กว่า code path รันได้ ไม่ใช่ผล performance ของ workload เต็ม</text>
+<line x1="620.0" y1="2213.0" x2="1185.0" y2="2213.0" stroke="#EEF1F4" stroke-width="1.0"/>
+<text x="620.0" y="2225.0" font-size="12" text-anchor="start" font-weight="700" fill="#203040" >calibration</text>
+<text x="620.0" y="2245.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >รอบทดลองหาค่าหรือ boundary ก่อนเก็บผลจริง ไม่ใช่ thesis timing result</text>
+<line x1="620.0" y1="2295.0" x2="1185.0" y2="2295.0" stroke="#EEF1F4" stroke-width="1.0"/>
+<text x="620.0" y="2307.0" font-size="12" text-anchor="start" font-weight="700" fill="#203040" >optimization history</text>
+<text x="620.0" y="2327.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >รอบระหว่างพัฒนาเพื่อหาสาเหตุและแก้ failure; ไม่ใช่ independent final trials</text>
+<line x1="620.0" y1="2377.0" x2="1185.0" y2="2377.0" stroke="#EEF1F4" stroke-width="1.0"/>
+<text x="620.0" y="2389.0" font-size="12" text-anchor="start" font-weight="700" fill="#203040" >cgroup</text>
+<text x="620.0" y="2409.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >กลไก Linux ที่รวม processes เป็นกลุ่มเพื่อวัดและจำกัด resource เช่น RAM</text>
+<line x1="620.0" y1="2459.0" x2="1185.0" y2="2459.0" stroke="#EEF1F4" stroke-width="1.0"/>
+<text x="620.0" y="2471.0" font-size="12" text-anchor="start" font-weight="700" fill="#203040" >parent cgroup</text>
+<text x="620.0" y="2491.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >cgroup ที่ครอบ training jobs ของ SRCG และกำหนดเพดาน RAM รวมของ jobs เหล่านั้น</text>
+<line x1="620.0" y1="2541.0" x2="1185.0" y2="2541.0" stroke="#EEF1F4" stroke-width="1.0"/>
+<text x="620.0" y="2553.0" font-size="12" text-anchor="start" font-weight="700" fill="#203040" >outer scope</text>
+<text x="620.0" y="2573.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >cgroup ระดับบนที่ครอบทั้ง SRCG parent, manager และ process จำลองที่อยู่นอก SRCG</text>
+<line x1="620.0" y1="2623.0" x2="1185.0" y2="2623.0" stroke="#EEF1F4" stroke-width="1.0"/>
+<text x="620.0" y="2635.0" font-size="12" text-anchor="start" font-weight="700" fill="#203040" >headroom</text>
+<text x="620.0" y="2655.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >capacity ที่กันไว้ไม่ให้ training ใช้ เพื่อเหลือให้ OS หรือ process นอก SRCG;</text>
+<text x="620.0" y="2671.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >ไม่ใช่ RAM ที่ allocate ไว้ล่วงหน้า</text>
+<line x1="620.0" y1="2705.0" x2="1185.0" y2="2705.0" stroke="#EEF1F4" stroke-width="1.0"/>
+<text x="620.0" y="2717.0" font-size="12" text-anchor="start" font-weight="700" fill="#203040" >Reserved Memory</text>
+<text x="620.0" y="2737.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >quota ส่วนกลางที่ SRCG ให้ jobs ยืมชั่วคราว; เป็นสิทธิ์เพิ่ม memory.max</text>
+<text x="620.0" y="2753.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >ไม่ใช่การจอง physical RAM</text>
+<line x1="620.0" y1="2787.0" x2="1185.0" y2="2787.0" stroke="#EEF1F4" stroke-width="1.0"/>
+<text x="620.0" y="2799.0" font-size="12" text-anchor="start" font-weight="700" fill="#203040" >reservation</text>
+<text x="620.0" y="2819.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >การที่ manager อนุมัติสิทธิ์ให้ job เพิ่ม memory.max ชั่วคราวก่อนสร้าง batch</text>
+<line x1="620.0" y1="2869.0" x2="1185.0" y2="2869.0" stroke="#EEF1F4" stroke-width="1.0"/>
+<text x="620.0" y="2881.0" font-size="12" text-anchor="start" font-weight="700" fill="#203040" >reservation token</text>
+<text x="620.0" y="2901.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >รหัสอ้างอิงสิทธิ์ที่อนุมัติ เพื่อให้ release/shrink สิทธิ์เดิมได้โดยไม่คืน quota</text>
+<text x="620.0" y="2917.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >ซ้ำ</text>
+<line x1="620.0" y1="2951.0" x2="1185.0" y2="2951.0" stroke="#EEF1F4" stroke-width="1.0"/>
+<text x="1210.0" y="175.0" font-size="12" text-anchor="start" font-weight="700" fill="#203040" >host RAM</text>
+<text x="1210.0" y="195.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >หน่วยความจำหลักของเครื่องที่ Linux และ CPU processes ใช้</text>
+<line x1="1210.0" y1="245.0" x2="1775.0" y2="245.0" stroke="#EEF1F4" stroke-width="1.0"/>
+<text x="1210.0" y="257.0" font-size="12" text-anchor="start" font-weight="700" fill="#203040" >VRAM / GPU memory</text>
+<text x="1210.0" y="277.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >หน่วยความจำบน GPU; cgroup memory.max ไม่ได้จำกัด resource นี้</text>
+<line x1="1210.0" y1="327.0" x2="1775.0" y2="327.0" stroke="#EEF1F4" stroke-width="1.0"/>
+<text x="1210.0" y="339.0" font-size="12" text-anchor="start" font-weight="700" fill="#203040" >CUDA allocated</text>
+<text x="1210.0" y="359.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >VRAM ที่ PyTorch tensors ใช้งานจริงตาม CUDA allocator ณ peak</text>
+<line x1="1210.0" y1="409.0" x2="1775.0" y2="409.0" stroke="#EEF1F4" stroke-width="1.0"/>
+<text x="1210.0" y="421.0" font-size="12" text-anchor="start" font-weight="700" fill="#203040" >CUDA reserved</text>
+<text x="1210.0" y="441.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >VRAM ที่ PyTorch CUDA allocator ถือไว้เพื่อ reuse; รวมพื้นที่ว่างใน cache</text>
+<text x="1210.0" y="457.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >จึงมักมากกว่า allocated</text>
+<line x1="1210.0" y1="491.0" x2="1775.0" y2="491.0" stroke="#EEF1F4" stroke-width="1.0"/>
+<text x="1210.0" y="503.0" font-size="12" text-anchor="start" font-weight="700" fill="#203040" >RSS</text>
+<text x="1210.0" y="523.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >Resident Set Size: RAM ที่ process มี resident อยู่โดยประมาณ; ไม่เท่ากับยอดทั้ง</text>
+<text x="1210.0" y="539.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >cgroup</text>
+<line x1="1210.0" y1="573.0" x2="1775.0" y2="573.0" stroke="#EEF1F4" stroke-width="1.0"/>
+<text x="1210.0" y="585.0" font-size="12" text-anchor="start" font-weight="700" fill="#203040" >memory limit / boundary</text>
+<text x="1210.0" y="605.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >เพดาน RAM ที่ cgroup อนุญาต; allocation ที่ชนเพดานอาจถูก reclaim หรือ OOM-kill</text>
+<line x1="1210.0" y1="655.0" x2="1775.0" y2="655.0" stroke="#EEF1F4" stroke-width="1.0"/>
+<text x="1210.0" y="667.0" font-size="12" text-anchor="start" font-weight="700" fill="#203040" >parent peak RAM</text>
+<text x="1210.0" y="687.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >ค่าสูงสุดของ memory.peak ใน parent cgroup ตลอด scenario รวมทุก training jobs ใต้</text>
+<text x="1210.0" y="703.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >parent</text>
+<line x1="1210.0" y1="737.0" x2="1775.0" y2="737.0" stroke="#EEF1F4" stroke-width="1.0"/>
+<text x="1210.0" y="749.0" font-size="12" text-anchor="start" font-weight="700" fill="#203040" >cgroup memory peak</text>
+<text x="1210.0" y="769.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >ค่าสูงสุดของ RAM ที่ cgroup ของ training log นั้นถูก charge</text>
+<line x1="1210.0" y1="819.0" x2="1775.0" y2="819.0" stroke="#EEF1F4" stroke-width="1.0"/>
+<text x="1210.0" y="831.0" font-size="12" text-anchor="start" font-weight="700" fill="#203040" >OOM</text>
+<text x="1210.0" y="851.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >Out Of Memory: ระบบไม่สามารถตอบ allocation ภายใต้ capacity/limit ปัจจุบัน</text>
+<line x1="1210.0" y1="901.0" x2="1775.0" y2="901.0" stroke="#EEF1F4" stroke-width="1.0"/>
+<text x="1210.0" y="913.0" font-size="12" text-anchor="start" font-weight="700" fill="#203040" >OOM-kill</text>
+<text x="1210.0" y="933.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >kernel ส่ง SIGKILL เพื่อหยุด process และคืน RAM</text>
+<line x1="1210.0" y1="983.0" x2="1775.0" y2="983.0" stroke="#EEF1F4" stroke-width="1.0"/>
+<text x="1210.0" y="995.0" font-size="12" text-anchor="start" font-weight="700" fill="#203040" >signal / SIGKILL</text>
+<text x="1210.0" y="1015.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >signal คือข้อความควบคุม process จากระบบ; SIGKILL หยุด process ทันทีและ process</text>
+<text x="1210.0" y="1031.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >ดักเพื่อ save ไม่ได้</text>
+<line x1="1210.0" y1="1065.0" x2="1775.0" y2="1065.0" stroke="#EEF1F4" stroke-width="1.0"/>
+<text x="1210.0" y="1077.0" font-size="12" text-anchor="start" font-weight="700" fill="#203040" >exit status</text>
+<text x="1210.0" y="1097.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >ตัวเลขที่ process ส่งเมื่อจบ; 0 หมายถึงสำเร็จตาม convention ส่วนค่าที่ไม่ใช่ 0</text>
+<text x="1210.0" y="1113.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >หมายถึง error/termination</text>
+<line x1="1210.0" y1="1147.0" x2="1775.0" y2="1147.0" stroke="#EEF1F4" stroke-width="1.0"/>
+<text x="1210.0" y="1159.0" font-size="12" text-anchor="start" font-weight="700" fill="#203040" >completed job</text>
+<text x="1210.0" y="1179.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >training ทำครบ steps/samples ตาม workload และ process จบด้วย exit status 0</text>
+<line x1="1210.0" y1="1229.0" x2="1775.0" y2="1229.0" stroke="#EEF1F4" stroke-width="1.0"/>
+<text x="1210.0" y="1241.0" font-size="12" text-anchor="start" font-weight="700" fill="#203040" >makespan</text>
+<text x="1210.0" y="1261.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >เวลาจากเริ่ม scenario จน process ที่ scenario รออยู่ทั้งหมดจบ ไม่ใช่เวลาของ job</text>
+<text x="1210.0" y="1277.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >เดี่ยวเสมอ</text>
+<line x1="1210.0" y1="1311.0" x2="1775.0" y2="1311.0" stroke="#EEF1F4" stroke-width="1.0"/>
+<text x="1210.0" y="1323.0" font-size="12" text-anchor="start" font-weight="700" fill="#203040" >time-to-failure</text>
+<text x="1210.0" y="1343.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >เวลาตั้งแต่เริ่มจนงานล้ม; ห้ามตีความว่าสั้นกว่าแล้วเร็วกว่า</text>
+<text x="1210.0" y="1359.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >เพราะไม่ได้ผลลัพธ์สำเร็จ</text>
+<line x1="1210.0" y1="1393.0" x2="1775.0" y2="1393.0" stroke="#EEF1F4" stroke-width="1.0"/>
+<text x="1210.0" y="1405.0" font-size="12" text-anchor="start" font-weight="700" fill="#203040" >time-to-result</text>
+<text x="1210.0" y="1425.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >เวลาจนได้ผล training ที่สมบูรณ์; ใช้เปรียบเทียบ performance ได้เมื่อทุก mode</text>
+<text x="1210.0" y="1441.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >จบงานเดียวกัน</text>
+<line x1="1210.0" y1="1475.0" x2="1775.0" y2="1475.0" stroke="#EEF1F4" stroke-width="1.0"/>
+<text x="1210.0" y="1487.0" font-size="12" text-anchor="start" font-weight="700" fill="#203040" >elapsed time</text>
+<text x="1210.0" y="1507.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >เวลาที่ training log หนึ่งตัวใช้ตั้งแต่เริ่มถึงจบการรันนั้น</text>
+<line x1="1210.0" y1="1557.0" x2="1775.0" y2="1557.0" stroke="#EEF1F4" stroke-width="1.0"/>
+<text x="1210.0" y="1569.0" font-size="12" text-anchor="start" font-weight="700" fill="#203040" >throughput</text>
+<text x="1210.0" y="1589.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >ปริมาณงานที่จบต่อเวลา เช่น samples/second หรือ steps/second</text>
+<line x1="1210.0" y1="1639.0" x2="1775.0" y2="1639.0" stroke="#EEF1F4" stroke-width="1.0"/>
+<text x="1210.0" y="1651.0" font-size="12" text-anchor="start" font-weight="700" fill="#203040" >checkpoint</text>
+<text x="1210.0" y="1671.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >ไฟล์สถานะ model/optimizer/ตำแหน่ง data ที่เขียนเสร็จแล้ว เพื่อ resume ภายหลัง</text>
+<line x1="1210.0" y1="1721.0" x2="1775.0" y2="1721.0" stroke="#EEF1F4" stroke-width="1.0"/>
+<text x="1210.0" y="1733.0" font-size="12" text-anchor="start" font-weight="700" fill="#203040" >resume</text>
+<text x="1210.0" y="1753.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >เริ่ม training process ใหม่แล้วโหลด checkpoint เพื่อทำต่อจากสถานะที่บันทึกไว้</text>
+<line x1="1210.0" y1="1803.0" x2="1775.0" y2="1803.0" stroke="#EEF1F4" stroke-width="1.0"/>
+<text x="1210.0" y="1815.0" font-size="12" text-anchor="start" font-weight="700" fill="#203040" >hash / SHA-256</text>
+<text x="1210.0" y="1835.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >ค่าลายนิ้วมือของข้อมูล; hash ตรงกันใช้ยืนยันว่า bytes ของ final model ตรงกัน</text>
+<line x1="1210.0" y1="1885.0" x2="1775.0" y2="1885.0" stroke="#EEF1F4" stroke-width="1.0"/>
+<text x="1210.0" y="1897.0" font-size="12" text-anchor="start" font-weight="700" fill="#203040" >performance</text>
+<text x="1210.0" y="1917.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >เวลาและอัตราการทำงานเมื่อได้ผลลัพธ์ที่ถูกต้อง เช่น time-to-result และ throughput</text>
+<line x1="1210.0" y1="1967.0" x2="1775.0" y2="1967.0" stroke="#EEF1F4" stroke-width="1.0"/>
+<text x="1210.0" y="1979.0" font-size="12" text-anchor="start" font-weight="700" fill="#203040" >safety result</text>
+<text x="1210.0" y="1999.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >ผลที่ตอบว่างานจบหรือถูก OOM-kill ภายใต้ resource pressure</text>
+<text x="1210.0" y="2015.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >ไม่ใช่คำตอบเรื่องความเร็วเพียงอย่างเดียว</text>
+<line x1="1210.0" y1="2049.0" x2="1775.0" y2="2049.0" stroke="#EEF1F4" stroke-width="1.0"/>
+<text x="1210.0" y="2061.0" font-size="12" text-anchor="start" font-weight="700" fill="#203040" >static scheduling</text>
+<text x="1210.0" y="2081.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >กำหนด limit หรือลำดับรันไว้ล่วงหน้าโดยไม่ปรับตาม RAM usage ระหว่างทำงาน</text>
+<line x1="1210.0" y1="2131.0" x2="1775.0" y2="2131.0" stroke="#EEF1F4" stroke-width="1.0"/>
+<text x="1210.0" y="2143.0" font-size="12" text-anchor="start" font-weight="700" fill="#203040" >randomized order</text>
+<text x="1210.0" y="2163.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >สลับลำดับว่า mode ใดรันก่อนในแต่ละ trial เพื่อลดผลจาก cache/อุณหภูมิ/สภาพเครื่อง</text>
+<line x1="1210.0" y1="2213.0" x2="1775.0" y2="2213.0" stroke="#EEF1F4" stroke-width="1.0"/>
+<text x="1210.0" y="2225.0" font-size="12" text-anchor="start" font-weight="700" fill="#203040" >mean</text>
+<text x="1210.0" y="2245.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >ค่าเฉลี่ยเลขคณิตของ trials ที่เลือก</text>
+<line x1="1210.0" y1="2295.0" x2="1775.0" y2="2295.0" stroke="#EEF1F4" stroke-width="1.0"/>
+<text x="1210.0" y="2307.0" font-size="12" text-anchor="start" font-weight="700" fill="#203040" >median</text>
+<text x="1210.0" y="2327.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >ค่ากลางหลังเรียงตัวเลข ช่วยลดผลของค่าที่สูงหรือต่ำผิดปกติ</text>
+<line x1="1210.0" y1="2377.0" x2="1775.0" y2="2377.0" stroke="#EEF1F4" stroke-width="1.0"/>
+<text x="1210.0" y="2389.0" font-size="12" text-anchor="start" font-weight="700" fill="#203040" >log scale</text>
+<text x="1210.0" y="2409.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >แกนที่ระยะเท่ากันหมายถึงการคูณ เช่น 1→10 เท่ากับ 10→100 ไม่ใช่การบวกเท่ากัน</text>
+<line x1="1210.0" y1="2459.0" x2="1775.0" y2="2459.0" stroke="#EEF1F4" stroke-width="1.0"/>
+<text x="1210.0" y="2471.0" font-size="12" text-anchor="start" font-weight="700" fill="#203040" >JSONL</text>
+<text x="1210.0" y="2491.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >ไฟล์ข้อความที่แต่ละบรรทัดเป็น JSON event หนึ่งรายการจาก training</text>
+<line x1="1210.0" y1="2541.0" x2="1775.0" y2="2541.0" stroke="#EEF1F4" stroke-width="1.0"/>
+<text x="1210.0" y="2553.0" font-size="12" text-anchor="start" font-weight="700" fill="#203040" >CSV</text>
+<text x="1210.0" y="2573.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >ไฟล์ตาราง comma-separated สำหรับเปิดด้วย spreadsheet หรือวิเคราะห์ต่อ</text>
+<line x1="1210.0" y1="2623.0" x2="1775.0" y2="2623.0" stroke="#EEF1F4" stroke-width="1.0"/>
+<text x="1210.0" y="2635.0" font-size="12" text-anchor="start" font-weight="700" fill="#203040" >MiB / GiB</text>
+<text x="1210.0" y="2655.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >หน่วยข้อมูลฐาน 1024: 1 MiB = 1,048,576 bytes และ 1 GiB = 1,073,741,824 bytes</text>
+<line x1="1210.0" y1="2705.0" x2="1775.0" y2="2705.0" stroke="#EEF1F4" stroke-width="1.0"/>
+<text x="1210.0" y="2717.0" font-size="12" text-anchor="start" font-weight="700" fill="#203040" >raw artifact</text>
+<text x="1210.0" y="2737.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >ไฟล์หลักฐานต้นทางที่ยังไม่ถูกรวมค่า เช่น JSONL log หรือ memory.events</text>
+<line x1="1210.0" y1="2787.0" x2="1775.0" y2="2787.0" stroke="#EEF1F4" stroke-width="1.0"/>
+<text x="1210.0" y="2799.0" font-size="12" text-anchor="start" font-weight="700" fill="#203040" >performance_summary</text>
+<text x="1210.0" y="2819.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >JSON event ท้าย training ที่รวมเวลา, peak memory, throughput และ final model</text>
+<text x="1210.0" y="2835.0" font-size="10" text-anchor="start" font-weight="400" fill="#66737F" >hash</text>
+<line x1="1210.0" y1="2869.0" x2="1775.0" y2="2869.0" stroke="#EEF1F4" stroke-width="1.0"/>
+<text x="30.0" y="3033.0" font-size="12" text-anchor="start" font-weight="400" fill="#66737F" >Definition แบบเต็มและกฎคัดผลอยู่ใน report.md; CSV เก็บ source path ของทุกแถวเพื่อย้อนตรวจ raw artifact ได้</text>
+</svg>

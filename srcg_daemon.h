@@ -12,9 +12,6 @@
 
 struct DaemonConfig {
   std::filesystem::path cgroup_parent{"/sys/fs/cgroup/srcg"};
-  std::uint64_t parent_memory_limit_bytes{};
-  MemoryLimit parent_swap_limit_bytes{std::uint64_t{0}};
-  std::uint64_t host_headroom_bytes{};
   std::chrono::milliseconds monitoring_interval{500};
   std::chrono::milliseconds cleanup_timeout{2000};
 };
@@ -44,9 +41,9 @@ public:
   explicit SrcgDaemon(DaemonConfig config,
                       CgroupBackend backend = CgroupBackend::Kernel);
 
-  void initialize();
   [[nodiscard]] JobRunResult runJob(const JobConfig &job,
                                     SampleCallback on_sample = {});
+  [[nodiscard]] CgroupSnapshot parentStatus() const;
   [[nodiscard]] CgroupSnapshot jobStatus(const std::string &job_id) const;
   void cleanupJob(const std::string &job_id);
   [[nodiscard]] CgroupEnvironment inspectEnvironment() const;

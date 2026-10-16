@@ -48,6 +48,19 @@ void waitAndCleanup(CgroupV2Manager &manager, const std::string &job) {
   }
   throw std::runtime_error("integration-test cgroup did not become empty");
 }
+
+void cleanupStaleTestJob(CgroupV2Manager &manager,
+                         const std::filesystem::path &parent,
+                         const std::string &job) {
+  if (!std::filesystem::exists(parent / job)) {
+    return;
+  }
+  if (!manager.cleanupSafe(job)) {
+    throw std::runtime_error("stale integration-test cgroup is still active: " +
+                             job);
+  }
+  manager.cleanupJob(job);
+}
 } // namespace
 
 int main(int argc, char **argv) {
@@ -67,6 +80,8 @@ int main(int argc, char **argv) {
 
   CgroupV2Manager manager(configured_parent);
   manager.initializeParent(512ULL * 1024ULL * 1024ULL, std::uint64_t{0});
+  cleanupStaleTestJob(manager, configured_parent, "integration-inheritance");
+  cleanupStaleTestJob(manager, configured_parent, "integration-oom");
 
   manager.createJob("integration-inheritance", 128ULL * 1024ULL * 1024ULL,
                     std::uint64_t{0});

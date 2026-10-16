@@ -46,9 +46,34 @@ int main() {
   TemporaryDirectory temporary;
   writeFile(temporary.path() / "cgroup.controllers", "cpu memory io\n");
   writeFile(temporary.path() / "cgroup.subtree_control", "\n");
+  writeFile(temporary.path() / "memory.max", "2147483648\n");
+  writeFile(temporary.path() / "memory.current", "536870912\n");
   const auto parent = temporary.path() / "srcg";
   CgroupV2Manager manager(parent, CgroupBackend::TestFilesystem);
   manager.initializeParent(1024ULL * 1024ULL * 1024ULL, std::uint64_t{0});
+
+  // Repeating init with identical values is idempotent, but changing an
+  // existing parent through init must never overwrite its limits.
+  manager.initializeParent(1024ULL * 1024ULL * 1024ULL, std::uint64_t{0});
+  bool overwrite_rejected = false;
+  try {
+    manager.initializeParent(2ULL * 1024ULL * 1024ULL * 1024ULL,
+                             std::uint64_t{0});
+  } catch (const std::runtime_error &) {
+    overwrite_rejected = true;
+  }
+  assert(overwrite_rejected);
+  const auto parent_state = manager.parentSnapshot();
+  assert(parent_state.memory_max_bytes == 1024ULL * 1024ULL * 1024ULL);
+
+  const auto boundaries = manager.ancestorMemoryBoundaries();
+  assert(boundaries.size() == 1);
+  assert(boundaries.front().path == temporary.path());
+  assert(boundaries.front().limit_bytes == 2ULL * 1024ULL * 1024ULL * 1024ULL);
+  assert(boundaries.front().current_bytes == 512ULL * 1024ULL * 1024ULL);
+  assert(boundaries.front().available_bytes ==
+         1536ULL * 1024ULL * 1024ULL);
+
   manager.createJob("job-A", 512ULL * 1024ULL * 1024ULL, std::uint64_t{0});
 
   const auto job = parent / "job-A";
@@ -63,6 +88,30 @@ int main() {
   assert(state.events.oom_kill == 1);
   assert(state.memory_stat.at("anon") == 900000);
 
+  manager.setJobMemoryLimit("job-A", 768ULL * 1024ULL * 1024ULL);
+  assert(manager.snapshot("job-A").memory_max_bytes ==
+         768ULL * 1024ULL * 1024ULL);
+
+  // A release must not lower memory.max beneath current usage plus margin.
+  assert(!manager.lowerJobMemoryLimitIfSafe(
+      "job-A", 384ULL * 1024ULL * 1024ULL,
+      384ULL * 1024ULL * 1024ULL));
+  assert(manager.snapshot("job-A").memory_max_bytes ==
+         768ULL * 1024ULL * 1024ULL);
+  assert(manager.lowerJobMemoryLimitIfSafe(
+      "job-A", 512ULL * 1024ULL * 1024ULL,
+      128ULL * 1024ULL * 1024ULL));
+  assert(manager.snapshot("job-A").memory_max_bytes ==
+         512ULL * 1024ULL * 1024ULL);
+
+  bool parent_limit_rejected = false;
+  try {
+    manager.setJobMemoryLimit("job-A", 2ULL * 1024ULL * 1024ULL * 1024ULL);
+  } catch (const std::invalid_argument &) {
+    parent_limit_rejected = true;
+  }
+  assert(parent_limit_rejected);
+
   writeFile(job / "cgroup.events", "populated 1\n");
   writeFile(job / "cgroup.procs", "1234\n");
   assert(!manager.cleanupSafe("job-A"));
@@ -74,10 +123,27 @@ int main() {
   }
   assert(active_rejected);
 
+  bool duplicate_active_rejected = false;
+  try {
+    manager.createJob("job-A", 256ULL * 1024ULL * 1024ULL,
+                      std::uint64_t{0});
+  } catch (const std::runtime_error &) {
+    duplicate_active_rejected = true;
+  }
+  assert(duplicate_active_rejected);
+
   writeFile(job / "cgroup.events", "populated 0\n");
   writeFile(job / "cgroup.procs", "");
-  writeFile(job / "memory.current", "0\n");
+  // Residual charges do not make an otherwise empty cgroup active.
+  writeFile(job / "memory.current", "4096\n");
   assert(manager.cleanupSafe("job-A"));
+
+  // Reusing a logical job id automatically replaces an empty cgroup left by
+  // an interrupted supervisor, even if residual memory is still charged.
+  manager.createJob("job-A", 256ULL * 1024ULL * 1024ULL, std::uint64_t{0});
+  const auto reused = manager.snapshot("job-A");
+  assert(reused.memory_max_bytes == 256ULL * 1024ULL * 1024ULL);
+  assert(reused.memory_current_bytes == 0);
   manager.cleanupJob("job-A");
   assert(!std::filesystem::exists(job));
 }

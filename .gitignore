@@ -1,6 +1,44 @@
-ML-dummy/
-cmake-build-debug/
-build/
-.idea/
-test
-test.cpp
+# Local environments and editor settings
+/.venv/
+/venv/
+/.idea/
+/.vscode/
+.env
+.env.*
+!.env.example
+*.swp
+*~
+
+# Python-generated files
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+.coverage
+htmlcov/
+
+# CMake builds and compiler output
+/build/
+/build-*/
+/cmake-build-*/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+CTestTestfile.cmake
+compile_commands.json
+Testing/
+*.o
+*.a
+*.so
+
+# Downloaded datasets and raw benchmark runs. Keep curated reports in
+# artifacts/analysis/ and documentation under docs/ tracked.
+/ML-Test-Dataset/
+/artifacts/milestone*/
+
+# Runtime diagnostics and crash dumps
+*.log
+core
+core.*

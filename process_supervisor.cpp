@@ -1,5 +1,6 @@
 #include "process_supervisor.h"
 
+#include <array>
 #include <atomic>
 #include <cerrno>
 #include <csignal>
@@ -11,6 +12,72 @@
 #include <unistd.h>
 
 namespace {
+volatile std::sig_atomic_t supervised_child_pid = -1;
+
+void forwardTerminationSignal(int signal_number) noexcept {
+  const int saved_errno = errno;
+  const auto child = static_cast<pid_t>(supervised_child_pid);
+  if (child > 0) {
+    ::kill(child, signal_number);
+  }
+  errno = saved_errno;
+}
+
+class SignalForwardingScope {
+public:
+  SignalForwardingScope() {
+    struct sigaction action {};
+    action.sa_handler = forwardTerminationSignal;
+    ::sigemptyset(&action.sa_mask);
+    action.sa_flags = 0;
+
+    for (std::size_t index = 0; index < signals_.size(); ++index) {
+      if (::sigaction(signals_[index], &action, &previous_[index]) != 0) {
+        const auto message = std::string(std::strerror(errno));
+        installed_ = index;
+        restore();
+        throw std::runtime_error("cannot install signal forwarder: " +
+                                 message);
+      }
+      installed_ = index + 1;
+    }
+  }
+
+  SignalForwardingScope(const SignalForwardingScope &) = delete;
+  SignalForwardingScope &operator=(const SignalForwardingScope &) = delete;
+
+  ~SignalForwardingScope() { restore(); }
+
+  void setChild(pid_t pid) noexcept {
+    supervised_child_pid = static_cast<std::sig_atomic_t>(pid);
+  }
+
+  void clearChild() noexcept { supervised_child_pid = -1; }
+
+  void restoreForChild() noexcept {
+    supervised_child_pid = -1;
+    restoreHandlers();
+    installed_ = 0;
+  }
+
+private:
+  void restoreHandlers() noexcept {
+    for (std::size_t index = 0; index < installed_; ++index) {
+      ::sigaction(signals_[index], &previous_[index], nullptr);
+    }
+  }
+
+  void restore() noexcept {
+    supervised_child_pid = -1;
+    restoreHandlers();
+    installed_ = 0;
+  }
+
+  static constexpr std::array<int, 3> signals_{SIGINT, SIGTERM, SIGHUP};
+  std::array<struct sigaction, signals_.size()> previous_{};
+  std::size_t installed_{0};
+};
+
 void closeNoInterrupt(int descriptor) noexcept {
   while (::close(descriptor) != 0 && errno == EINTR) {
   }
@@ -60,6 +127,7 @@ ProcessResult ProcessSupervisor::run(const std::string &job_id,
                              std::string(std::strerror(errno)));
   }
 
+  SignalForwardingScope signal_forwarding;
   const pid_t pid = ::fork();
   if (pid < 0) {
     const auto message = std::string(std::strerror(errno));
@@ -68,6 +136,7 @@ ProcessResult ProcessSupervisor::run(const std::string &job_id,
     throw std::runtime_error("fork failed: " + message);
   }
   if (pid == 0) {
+    signal_forwarding.restoreForChild();
     closeNoInterrupt(barrier[1]);
     char permission = 0;
     ssize_t received = 0;
@@ -89,6 +158,7 @@ ProcessResult ProcessSupervisor::run(const std::string &job_id,
     _exit(127);
   }
 
+  signal_forwarding.setChild(pid);
   closeNoInterrupt(barrier[0]);
   try {
     // The child cannot exec until this write succeeds, so all descendants
@@ -99,6 +169,7 @@ ProcessResult ProcessSupervisor::run(const std::string &job_id,
   } catch (...) {
     closeNoInterrupt(barrier[1]);
     waitForChild(pid);
+    signal_forwarding.clearChild();
     throw;
   }
 
@@ -117,6 +188,7 @@ ProcessResult ProcessSupervisor::run(const std::string &job_id,
   do {
     waited = ::waitpid(pid, &status, 0);
   } while (waited < 0 && errno == EINTR);
+  signal_forwarding.clearChild();
   monitoring.store(false, std::memory_order_release);
   monitor.get();
   if (waited < 0) {

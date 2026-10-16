@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="650" viewBox="0 0 1320 650" role="img" aria-label="SRCG model size and GPU memory">
+<title>SRCG model size and GPU memory</title>
+<style>text{font-family:Inter,Segoe UI,Arial,sans-serif}.mono{font-family:ui-monospace,SFMono-Regular,Consolas,monospace}</style>
+<rect x="0.0" y="0.0" width="1320.0" height="650.0" fill="#FFFFFF" opacity="1.000" stroke="none" rx="0.0"/>
+<text x="30.0" y="42.0" font-size="26" text-anchor="start" font-weight="700" fill="#1F2933" >Model size (จำนวน parameters) และ GPU memory ที่วัดได้</text>
+<text x="30.0" y="68.0" font-size="12" text-anchor="start" font-weight="400" fill="#66737F" >parameter = ค่าที่ model เรียนรู้; GPU peaks ใช้ median ของ valid completed logs ที่บันทึก full model เดียวกัน</text>
+<text x="45.0" y="115.0" font-size="17" text-anchor="start" font-weight="700" fill="#1F2933" >A. Parameters</text>
+<text x="690.0" y="115.0" font-size="17" text-anchor="start" font-weight="700" fill="#1F2933" >B. CUDA peak memory (VRAM สูงสุด)</text>
+<text x="45.0" y="175.0" font-size="15" text-anchor="start" font-weight="700" fill="#1F2933" >resnet50</text>
+<rect x="45.0" y="193.0" width="550.0" height="36.0" fill="#EEF1F4" opacity="1.000" stroke="none" rx="5.0"/>
+<rect x="45.0" y="193.0" width="550.0" height="36.0" fill="#735CDD" opacity="0.860" stroke="none" rx="5.0"/>
+<text x="55.0" y="217.0" font-size="12" text-anchor="start" font-weight="700" fill="#FFFFFF" >25.56 M params  ≈ 97.5 MiB FP32 weights</text>
+<text x="690.0" y="175.0" font-size="15" text-anchor="start" font-weight="700" fill="#1F2933" >resnet50 (n=1 logs)</text>
+<text x="690.0" y="210.0" font-size="11" text-anchor="start" font-weight="400" fill="#1F2933" >allocated</text>
+<rect x="770.0" y="191.0" width="430.0" height="26.0" fill="#EEF1F4" opacity="1.000" stroke="none" rx="4.0"/>
+<rect x="770.0" y="191.0" width="218.5" height="26.0" fill="#4C78A8" opacity="0.850" stroke="none" rx="4.0"/>
+<text x="1210.0" y="209.0" font-size="11" text-anchor="start" font-weight="400" fill="#1F2933" >940.2 MiB</text>
+<text x="690.0" y="252.0" font-size="11" text-anchor="start" font-weight="400" fill="#1F2933" >reserved</text>
+<rect x="770.0" y="233.0" width="430.0" height="26.0" fill="#EEF1F4" opacity="1.000" stroke="none" rx="4.0"/>
+<rect x="770.0" y="233.0" width="246.8" height="26.0" fill="#E45756" opacity="0.850" stroke="none" rx="4.0"/>
+<text x="1210.0" y="251.0" font-size="11" text-anchor="start" font-weight="400" fill="#1F2933" >1062.0 MiB</text>
+<text x="45.0" y="325.0" font-size="15" text-anchor="start" font-weight="700" fill="#1F2933" >unet3d</text>
+<rect x="45.0" y="343.0" width="550.0" height="36.0" fill="#EEF1F4" opacity="1.000" stroke="none" rx="5.0"/>
+<rect x="45.0" y="343.0" width="485.9" height="36.0" fill="#D97706" opacity="0.860" stroke="none" rx="5.0"/>
+<text x="55.0" y="367.0" font-size="12" text-anchor="start" font-weight="700" fill="#FFFFFF" >22.58 M params  ≈ 86.1 MiB FP32 weights</text>
+<text x="690.0" y="325.0" font-size="15" text-anchor="start" font-weight="700" fill="#1F2933" >unet3d (n=77 logs)</text>
+<text x="690.0" y="360.0" font-size="11" text-anchor="start" font-weight="400" fill="#1F2933" >allocated</text>
+<rect x="770.0" y="341.0" width="430.0" height="26.0" fill="#EEF1F4" opacity="1.000" stroke="none" rx="4.0"/>
+<rect x="770.0" y="341.0" width="300.9" height="26.0" fill="#4C78A8" opacity="0.850" stroke="none" rx="4.0"/>
+<text x="1210.0" y="359.0" font-size="11" text-anchor="start" font-weight="400" fill="#1F2933" >1294.4 MiB</text>
+<text x="690.0" y="402.0" font-size="11" text-anchor="start" font-weight="400" fill="#1F2933" >reserved</text>
+<rect x="770.0" y="383.0" width="430.0" height="26.0" fill="#EEF1F4" opacity="1.000" stroke="none" rx="4.0"/>
+<rect x="770.0" y="383.0" width="430.0" height="26.0" fill="#E45756" opacity="0.850" stroke="none" rx="4.0"/>
+<text x="1210.0" y="401.0" font-size="11" text-anchor="start" font-weight="400" fill="#1F2933" >1850.0 MiB</text>
+<rect x="45.0" y="545.0" width="1230.0" height="70.0" fill="#FFF7E6" opacity="1.000" stroke="none" rx="8.0"/>
+<text x="60.0" y="572.0" font-size="12" text-anchor="start" font-weight="700" fill="#8A5700" >Definition สำคัญ</text>
+<text x="60.0" y="595.0" font-size="12" text-anchor="start" font-weight="400" fill="#8A5700" >allocated = VRAM ที่ tensor ใช้; reserved = VRAM ที่ allocator ถือไว้ reuse; Lung host-RAM spike มาจาก NIfTI decode/resize</text>
+</svg>

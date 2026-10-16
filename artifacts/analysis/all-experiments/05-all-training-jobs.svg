@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1590" height="630" viewBox="0 0 1590 630" role="img" aria-label="All completed SRCG training logs">
+<title>All completed SRCG training logs</title>
+<style>text{font-family:Inter,Segoe UI,Arial,sans-serif}.mono{font-family:ui-monospace,SFMono-Regular,Consolas,monospace}</style>
+<rect x="0.0" y="0.0" width="1590.0" height="630.0" fill="#FFFFFF" opacity="1.000" stroke="none" rx="0.0"/>
+<text x="28.0" y="38.0" font-size="25" text-anchor="start" font-weight="700" fill="#1F2933" >Completed training logs: elapsed time เทียบ cgroup memory peak</text>
+<text x="28.0" y="64.0" font-size="12" text-anchor="start" font-weight="400" fill="#66737F" >หนึ่งจุด = performance_summary หนึ่ง log; แกนเวลาเป็น log scale; host-scope และ smoke runs ยังอยู่จึงต้องเปิด CSV ก่อนเทียบ</text>
+<text x="55.0" y="104.0" font-size="15" text-anchor="start" font-weight="700" fill="#1F2933" >ResNet-50 / COCO (n=1)</text>
+<rect x="55.0" y="125.0" width="470.0" height="430.0" fill="#FBFCFD" opacity="1.000" stroke="#D9DEE3" rx="5.0"/>
+<line x1="55.0" y1="555.0" x2="525.0" y2="555.0" stroke="#E7EBEE" stroke-width="1.0"/>
+<text x="47.0" y="559.0" font-size="9" text-anchor="end" font-weight="400" fill="#66737F" >0</text>
+<line x1="55.0" y1="488.6" x2="525.0" y2="488.6" stroke="#E7EBEE" stroke-width="1.0"/>
+<text x="47.0" y="492.6" font-size="9" text-anchor="end" font-weight="400" fill="#66737F" >2</text>
+<line x1="55.0" y1="422.2" x2="525.0" y2="422.2" stroke="#E7EBEE" stroke-width="1.0"/>
+<text x="47.0" y="426.2" font-size="9" text-anchor="end" font-weight="400" fill="#66737F" >4</text>
+<line x1="55.0" y1="355.8" x2="525.0" y2="355.8" stroke="#E7EBEE" stroke-width="1.0"/>
+<text x="47.0" y="359.8" font-size="9" text-anchor="end" font-weight="400" fill="#66737F" >6</text>
+<line x1="55.0" y1="289.4" x2="525.0" y2="289.4" stroke="#E7EBEE" stroke-width="1.0"/>
+<text x="47.0" y="293.4" font-size="9" text-anchor="end" font-weight="400" fill="#66737F" >8</text>
+<line x1="55.0" y1="223.0" x2="525.0" y2="223.0" stroke="#E7EBEE" stroke-width="1.0"/>
+<text x="47.0" y="227.0" font-size="9" text-anchor="end" font-weight="400" fill="#66737F" >10</text>
+<line x1="55.0" y1="156.6" x2="525.0" y2="156.6" stroke="#E7EBEE" stroke-width="1.0"/>
+<text x="47.0" y="160.6" font-size="9" text-anchor="end" font-weight="400" fill="#66737F" >12</text>
+<line x1="55.0" y1="125.0" x2="55.0" y2="555.0" stroke="#EFF2F4" stroke-width="1.0"/>
+<text x="55.0" y="573.0" font-size="9" text-anchor="middle" font-weight="400" fill="#66737F" >1</text>
+<line x1="123.7" y1="125.0" x2="123.7" y2="555.0" stroke="#EFF2F4" stroke-width="1.0"/>
+<text x="123.7" y="573.0" font-size="9" text-anchor="middle" font-weight="400" fill="#66737F" >2</text>
+<line x1="214.4" y1="125.0" x2="214.4" y2="555.0" stroke="#EFF2F4" stroke-width="1.0"/>
+<text x="214.4" y="573.0" font-size="9" text-anchor="middle" font-weight="400" fill="#66737F" >5</text>
+<line x1="283.1" y1="125.0" x2="283.1" y2="555.0" stroke="#EFF2F4" stroke-width="1.0"/>
+<text x="283.1" y="573.0" font-size="9" text-anchor="middle" font-weight="400" fill="#66737F" >10</text>
+<line x1="351.7" y1="125.0" x2="351.7" y2="555.0" stroke="#EFF2F4" stroke-width="1.0"/>
+<text x="351.7" y="573.0" font-size="9" text-anchor="middle" font-weight="400" fill="#66737F" >20</text>
+<line x1="442.5" y1="125.0" x2="442.5" y2="555.0" stroke="#EFF2F4" stroke-width="1.0"/>
+<text x="442.5" y="573.0" font-size="9" text-anchor="middle" font-weight="400" fill="#66737F" >50</text>
+<line x1="511.1" y1="125.0" x2="511.1" y2="555.0" stroke="#EFF2F4" stroke-width="1.0"/>
+<text x="511.1" y="573.0" font-size="9" text-anchor="middle" font-weight="400" fill="#66737F" >100</text>
+<circle cx="451.0" cy="328.7" r="9.1" fill="#4C78A8" opacity="0.62" stroke="#FFFFFF" stroke-width="1"><title>milestone3/real-workloads/coco-normal-full.jsonl | baseline | 54.49s | 6.82 GiB | steps=625</title></circle>
+<text x="290.0" y="598.0" font-size="10" text-anchor="middle" font-weight="400" fill="#1F2933" >elapsed seconds (log scale)</text>
+<text x="570.0" y="104.0" font-size="15" text-anchor="start" font-weight="700" fill="#1F2933" >3D U-Net / Lung (n=77)</text>
+<rect x="570.0" y="125.0" width="470.0" height="430.0" fill="#FBFCFD" opacity="1.000" stroke="#D9DEE3" rx="5.0"/>
+<line x1="570.0" y1="555.0" x2="1040.0" y2="555.0" stroke="#E7EBEE" stroke-width="1.0"/>
+<text x="562.0" y="559.0" font-size="9" text-anchor="end" font-weight="400" fill="#66737F" >0</text>
+<line x1="570.0" y1="488.6" x2="1040.0" y2="488.6" stroke="#E7EBEE" stroke-width="1.0"/>
+<text x="562.0" y="492.6" font-size="9" text-anchor="end" font-weight="400" fill="#66737F" >2</text>
+<line x1="570.0" y1="422.2" x2="1040.0" y2="422.2" stroke="#E7EBEE" stroke-width="1.0"/>
+<text x="562.0" y="426.2" font-size="9" text-anchor="end" font-weight="400" fill="#66737F" >4</text>
+<line x1="570.0" y1="355.8" x2="1040.0" y2="355.8" stroke="#E7EBEE" stroke-width="1.0"/>
+<text x="562.0" y="359.8" font-size="9" text-anchor="end" font-weight="400" fill="#66737F" >6</text>
+<line x1="570.0" y1="289.4" x2="1040.0" y2="289.4" stroke="#E7EBEE" stroke-width="1.0"/>
+<text x="562.0" y="293.4" font-size="9" text-anchor="end" font-weight="400" fill="#66737F" >8</text>
+<line x1="570.0" y1="223.0" x2="1040.0" y2="223.0" stroke="#E7EBEE" stroke-width="1.0"/>
+<text x="562.0" y="227.0" font-size="9" text-anchor="end" font-weight="400" fill="#66737F" >10</text>
+<line x1="570.0" y1="156.6" x2="1040.0" y2="156.6" stroke="#E7EBEE" stroke-width="1.0"/>
+<text x="562.0" y="160.6" font-size="9" text-anchor="end" font-weight="400" fill="#66737F" >12</text>
+<line x1="570.0" y1="125.0" x2="570.0" y2="555.0" stroke="#EFF2F4" stroke-width="1.0"/>
+<text x="570.0" y="573.0" font-size="9" text-anchor="middle" font-weight="400" fill="#66737F" >1</text>
+<line x1="638.7" y1="125.0" x2="638.7" y2="555.0" stroke="#EFF2F4" stroke-width="1.0"/>
+<text x="638.7" y="573.0" font-size="9" text-anchor="middle" font-weight="400" fill="#66737F" >2</text>
+<line x1="729.4" y1="125.0" x2="729.4" y2="555.0" stroke="#EFF2F4" stroke-width="1.0"/>
+<text x="729.4" y="573.0" font-size="9" text-anchor="middle" font-weight="400" fill="#66737F" >5</text>
+<line x1="798.1" y1="125.0" x2="798.1" y2="555.0" stroke="#EFF2F4" stroke-width="1.0"/>
+<text x="798.1" y="573.0" font-size="9" text-anchor="middle" font-weight="400" fill="#66737F" >10</text>
+<line x1="866.7" y1="125.0" x2="866.7" y2="555.0" stroke="#EFF2F4" stroke-width="1.0"/>
+<text x="866.7" y="573.0" font-size="9" text-anchor="middle" font-weight="400" fill="#66737F" >20</text>
+<line x1="957.5" y1="125.0" x2="957.5" y2="555.0" stroke="#EFF2F4" stroke-width="1.0"/>
+<text x="957.5" y="573.0" font-size="9" text-anchor="middle" font-weight="400" fill="#66737F" >50</text>
+<line x1="1026.1" y1="125.0" x2="1026.1" y2="555.0" stroke="#EFF2F4" stroke-width="1.0"/>
+<text x="1026.1" y="573.0" font-size="9" text-anchor="middle" font-weight="400" fill="#66737F" >100</text>
+<circle cx="1013.4" cy="472.8" r="8.8" fill="#2A9D6F" opacity="0.62" stroke="#FFFFFF" stroke-width="1"><title>milestone3/capacity-sweep/4g-srcg-1/lung-a.jsonl | srcg | 87.96s | 2.48 GiB | steps=63</title></circle>
+<circle cx="1011.1" cy="472.5" r="8.8" fill="#2A9D6F" opacity="0.62" stroke="#FFFFFF" stroke-width="1"><title>milestone3/capacity-sweep/4g-srcg-1/lung-b.jsonl | srcg | 85.91s | 2.48 GiB | steps=63</title></circle>
+<circle cx="1011.0" cy="472.8" r="8.8" fill="#2A9D6F" opacity="0.62" stroke="#FFFFFF" stroke-width="1"><title>milestone3/capacity-sweep/4g-srcg-2/lung-a.jsonl | srcg | 85.86s | 2.48 GiB | steps=63</title></circle>
+<circle cx="1013.3" cy="472.9" r="8.8" fill="#2A9D6F" opacity="0.62" stroke="#FFFFFF" stroke-width="1"><title>milestone3/capacity-sweep/4g-srcg-2/lung-b.jsonl | srcg | 87.90s | 2.47 GiB | steps=63</title></circle>
+<circle cx="1014.3" cy="472.8" r="8.8" fill="#2A9D6F" opacity="0.62" stroke="#FFFFFF" stroke-width="1"><title>milestone3/capacity-sweep/ancestor-aware-srcg-1/lung-a.jsonl | srcg | 88.80s | 2.48 GiB | steps=63</title></circle>
+<circle cx="1012.1" cy="472.8" r="8.8" fill="#2A9D6F" opacity="0.62" stroke="#FFFFFF" stroke-width="1"><title>milestone3/capacity-sweep/ancestor-aware-srcg-1/lung-b.jsonl | srcg | 86.77s | 2.48 GiB | steps=63</title></circle>
+<circle cx="1013.2" cy="472.8" r="8.8" fill="#2A9D6F" opacity="0.62" stroke="#FFFFFF" stroke-width="1"><title>milestone3/capacity-sweep/ancestor-aware-srcg-2/lung-a.jsonl | srcg | 87.78s | 2.48 GiB | steps=63</title></circle>
+<circle cx="1010.9" cy="472.9" r="8.8" fill="#2A9D6F" opacity="0.62" stroke="#FFFFFF" stroke-width="1"><title>milestone3/capacity-sweep/ancestor-aware-srcg-2/lung-b.jsonl | srcg | 85.74s | 2.47 GiB | steps=63</title></circle>
+<circle cx="997.6" cy="422.2" r="8.8" fill="#4C78A8" opacity="0.62" stroke="#FFFFFF" stroke-width="1"><title>milestone3/capacity-sweep/sequential-normal-1/lung-a.jsonl | baseline | 74.95s | 4.00 GiB | steps=63</title></circle>
+<circle cx="997.7" cy="428.0" r="8.8" fill="#4C78A8" opacity="0.62" stroke="#FFFFFF" stroke-width="1"><title>milestone3/capacity-sweep/sequential-normal-1/lung-b.jsonl | baseline | 75.06s | 3.83 GiB | steps=63</title></circle>
+<circle cx="998.2" cy="422.2" r="8.8" fill="#4C78A8" opacity="0.62" stroke="#FFFFFF" stroke-width="1"><title>milestone3/capacity-sweep/sequential-normal-2/lung-a.jsonl | baseline | 75.47s | 4.00 GiB | steps=63</title></circle>
+<circle cx="998.8" cy="424.8" r="8.8" fill="#4C78A8" opacity="0.62" stroke="#FFFFFF" stroke-width="1"><title>milestone3/capacity-sweep/sequential-normal-2/lung-b.jsonl | baseline | 75.92s | 3.92 GiB | steps=63</title></circle>
+<circle cx="1003.9" cy="422.2" r="8.8" fill="#4C78A8" opacity="0.62" stroke="#FFFFFF" stroke-width="1"><title>milestone3/cold-boot/sequential-1/lung-a.jsonl | baseline | 79.90s | 4.00 GiB | steps=63</title></circle>
+<circle cx="1005.5" cy="424.8" r="8.8" fill="#4C78A8" opacity="0.62" stroke="#FFFFFF" stroke-width="1"><title>milestone3/cold-boot/sequential-1/lung-b.jsonl | baseline | 81.22s | 3.92 GiB | steps=63</title></circle>
+<circle cx="1011.9" cy="472.7" r="8.8" fill="#2A9D6F" opacity="0.62" stroke="#FFFFFF" stroke-width="1"><title>milestone3/cold-boot/srcg-1/lung-a.jsonl | srcg | 86.63s | 2.48 GiB | steps=63</title></circle>
+<circle cx="1014.2" cy="472.7" r="8.8" fill="#2A9D6F" opacity="0.62" stroke="#FFFFFF" stroke-width="1"><title>milestone3/cold-boot/srcg-1/lung-b.jsonl | srcg | 88.71s | 2.48 GiB | steps=63</title></circle>
+<circle cx="1034.2" cy="472.8" r="8.8" fill="#2A9D6F" opacity="0.62" stroke="#FFFFFF" stroke-width="1"><title>milestone3/late-arrival/ancestor-aware-srcg-1/lung-a.jsonl | srcg | 108.56s | 2.47 GiB | steps=63</title></circle>
+<circle cx="1032.3" cy="472.8" r="8.8" fill="#2A9D6F" opacity="0.62" stroke="#FFFFFF" stroke-width="1"><title>milestone3/late-arrival/ancestor-aware-srcg-1/lung-b.jsonl | srcg | 106.48s | 2.48 GiB | steps=63</title></circle>
+<circle cx="1032.3" cy="472.8" r="8.8" fill="#2A9D6F" opacity="0.62" stroke="#FFFFFF" stroke-width="1"><title>milestone3/late-arrival/ancestor-aware-srcg-2/lung-a.jsonl | srcg | 106.47s | 2.47 GiB | steps=63</title></circle>
+<circle cx="1034.2" cy="472.9" r="8.8" fill="#2A9D6F" opacity="0.62" stroke="#FFFFFF" stroke-width="1"><title>milestone3/late-arrival/ancestor-aware-srcg-2/lung-b.jsonl | srcg | 108.48s | 2.47 GiB | steps=63</title></circle>
+<circle cx="1015.8" cy="472.8" r="8.8" fill="#2A9D6F" opacity="0.62" stroke="#FFFFFF" stroke-width="1"><title>milestone3/late-arrival/protected-srcg-1/lung-a.jsonl | srcg | 90.09s | 2.48 GiB | steps=63</title></circle>
+<circle cx="1013.5" cy="472.8" r="8.8" fill="#2A9D6F" opacity="0.62" stroke="#FFFFFF" stroke-width="1"><title>milestone3/late-arrival/protected-srcg-1/lung-b.jsonl | srcg | 88.01s | 2.48 GiB | steps=63</title></circle>
+<circle cx="1014.0" cy="472.9" r="8.8" fill="#2A9D6F" opacity="0.62" stroke="#FFFFFF" stroke-width="1"><title>milestone3/late-arrival/protected-srcg-2/lung-a.jsonl | srcg | 88.53s | 2.47 GiB | steps=63</title></circle>
+<circle cx="1011.7" cy="472.9" r="8.8" fill="#2A9D6F" opacity="0.62" stroke="#FFFFFF" stroke-width="1"><title>milestone3/late-arrival/protected-srcg-2/lung-b.jsonl | srcg | 86.50s | 2.47 GiB | steps=63</title></circle>
+<circle cx="1015.7" cy="474.1" r="8.8" fill="#2A9D6F" opacity="0.62" stroke="#FFFFFF" stroke-width="1"><title>milestone3/optimization/early-release-only-1/lung-a.jsonl | srcg | 90.01s | 2.44 GiB | steps=63</title></circle>
+<circle cx="1017.7" cy="473.7" r="8.8" fill="#2A9D6F" opacity="0.62" stroke="#FFFFFF" stroke-width="1"><title>milestone3/optimization/early-release-only-1/lung-b.jsonl | srcg | 91.87s | 2.45 GiB | steps=63</title></circle>
+<circle cx="1011.6" cy="472.8" r="8.8" fill="#2A9D6F" opacity="0.62" stroke="#FFFFFF" stroke-width="1"><title>milestone3/optimization/legacy-control-1/lung-a.jsonl | srcg | 86.39s | 2.48 GiB | steps=63</title></circle>
+<circle cx="1009.3" cy="472.8" r="8.8" fill="#2A9D6F" opacity="0.62" stroke="#FFFFFF" stroke-width="1"><title>milestone3/optimization/legacy-control-1/lung-b.jsonl | srcg | 84.39s | 2.48 GiB | steps=63</title></circle>
+<circle cx="1016.6" cy="474.2" r="8.8" fill="#2A9D6F" opacity="0.62" stroke="#FFFFFF" stroke-width="1"><title>milestone3/optimization/shrink-early-release-1/lung-a.jsonl | srcg | 90.86s | 2.43 GiB | steps=63</title></circle>
+<circle cx="1014.5" cy="473.4" r="8.8" fill="#2A9D6F" opacity="0.62" stroke="#FFFFFF" stroke-width="1"><title>milestone3/optimization/shrink-early-release-1/lung-b.jsonl | srcg | 88.95s | 2.46 GiB | steps=63</title></circle>
+<circle cx="1012.9" cy="472.8" r="8.8" fill="#2A9D6F" opacity="0.62" stroke="#FFFFFF" stroke-width="1"><title>milestone3/optimization/shrink-only-1/lung-a.jsonl | srcg | 87.47s | 2.47 GiB | steps=63</title></circle>
+<circle cx="1015.0" cy="472.9" r="8.8" fill="#2A9D6F" opacity="0.62" stroke="#FFFFFF" stroke-width="1"><title>milestone3/optimization/shrink-only-1/lung-b.jsonl | srcg | 89.39s | 2.47 GiB | steps=63</title></circle>
+<circle cx="1014.2" cy="472.9" r="8.8" fill="#2A9D6F" opacity="0.62" stroke="#FFFFFF" stroke-width="1"><title>milestone3/optimization/shrink-only-2/lung-a.jsonl | srcg | 88.65s | 2.47 GiB | steps=63</title></circle>
+<circle cx="1016.3" cy="472.8" r="8.8" fill="#2A9D6F" opacity="0.62" stroke="#FFFFFF" stroke-width="1"><title>milestone3/optimization/shrink-only-2/lung-b.jsonl | srcg | 90.54s | 2.48 GiB | steps=63</title></circle>
+<circle cx="927.7" cy="389.0" r="8.8" fill="#4C78A8" opacity="0.62" stroke="#FFFFFF" stroke-width="1"><title>milestone3/optimization/workers2-normal-5g-1/lung-b.jsonl | baseline | 37.04s | 5.00 GiB | steps=63</title></circle>
+<circle cx="1021.0" cy="452.1" r="8.8" fill="#2A9D6F" opacity="0.62" stroke="#FFFFFF" stroke-width="1"><title>milestone3/optimization/workers2-release-aware-5g-1/lung-b.jsonl | srcg | 94.95s | 3.10 GiB | steps=63</title></circle>
+<circle cx="1015.3" cy="459.6" r="8.8" fill="#2A9D6F" opacity="0.62" stroke="#FFFFFF" stroke-width="1"><title>milestone3/optimization/workers2-release-wait-5g-1/lung-a.jsonl | srcg | 89.70s | 2.87 GiB | steps=63</title></circle>
+<circle cx="1014.6" cy="452.2" r="8.8" fill="#2A9D6F" opacity="0.62" stroke="#FFFFFF" stroke-width="1"><title>milestone3/optimization/workers2-release-wait-5g-1/lung-b.jsonl | srcg | 89.00s | 3.10 GiB | steps=63</title></circle>
+<circle cx="927.8" cy="422.2" r="8.8" fill="#4C78A8" opacity="0.62" stroke="#FFFFFF" stroke-width="1"><title>milestone3/optimization/workers2-sequential-diagnostic-1/lung-a.jsonl | baseline | 37.08s | 4.00 GiB | steps=63</title></circle>
+<circle cx="926.3" cy="422.3" r="8.8" fill="#4C78A8" opacity="0.62" stroke="#FFFFFF" stroke-width="1"><title>milestone3/optimization/workers2-sequential-diagnostic-1/lung-b.jsonl | baseline | 36.51s | 4.00 GiB | steps=63</title></circle>
+<circle cx="999.8" cy="478.2" r="8.8" fill="#4C78A8" opacity="0.62" stroke="#FFFFFF" stroke-width="1"><title>milestone3/real-workloads/concurrent-normal/lung-a.jsonl | baseline | 76.64s | 2.31 GiB | steps=63</title></circle>
+<circle cx="998.8" cy="478.3" r="8.8" fill="#4C78A8" opacity="0.62" stroke="#FFFFFF" stroke-width="1"><title>milestone3/real-workloads/concurrent-normal/lung-b.jsonl | baseline | 75.89s | 2.31 GiB | steps=63</title></circle>
+<circle cx="1040.0" cy="478.2" r="8.8" fill="#2A9D6F" opacity="0.62" stroke="#FFFFFF" stroke-width="1"><title>milestone3/real-workloads/concurrent-srcg/lung-a.jsonl | srcg | 115.06s | 2.31 GiB | steps=63</title></circle>
+<circle cx="1026.1" cy="478.3" r="8.8" fill="#2A9D6F" opacity="0.62" stroke="#FFFFFF" stroke-width="1"><title>milestone3/real-workloads/concurrent-srcg/lung-b.jsonl | srcg | 99.97s | 2.31 GiB | steps=63</title></circle>
+<circle cx="995.4" cy="125.0" r="8.8" fill="#4C78A8" opacity="0.62" stroke="#FFFFFF" stroke-width="1"><title>milestone3/real-workloads/lung-normal-full.jsonl | baseline | 73.32s | 12.95 GiB | steps=63</title></circle>
+<circle cx="994.2" cy="478.2" r="8.8" fill="#2A9D6F" opacity="0.62" stroke="#FFFFFF" stroke-width="1"><title>milestone3/real-workloads/lung-srcg-full.jsonl | srcg | 72.49s | 2.31 GiB | steps=63</title></circle>
+<circle cx="1015.7" cy="474.3" r="8.8" fill="#2A9D6F" opacity="0.62" stroke="#FFFFFF" stroke-width="1"><title>milestone3/real-workloads/phase2-cache-aware-1/lung-a.jsonl | srcg | 90.06s | 2.43 GiB | steps=63</title></circle>
+<circle cx="1015.7" cy="474.6" r="8.8" fill="#2A9D6F" opacity="0.62" stroke="#FFFFFF" stroke-width="1"><title>milestone3/real-workloads/phase2-cache-aware-1/lung-b.jsonl | srcg | 90.06s | 2.42 GiB | steps=63</title></circle>
+<circle cx="1016.9" cy="474.8" r="8.8" fill="#2A9D6F" opacity="0.62" stroke="#FFFFFF" stroke-width="1"><title>milestone3/real-workloads/phase2-cache-aware-no-trace-1/lung-a.jsonl | srcg | 91.16s | 2.42 GiB | steps=63</title></circle>
+<circle cx="1016.9" cy="476.9" r="8.8" fill="#2A9D6F" opacity="0.62" stroke="#FFFFFF" stroke-width="1"><title>milestone3/real-workloads/phase2-cache-aware-no-trace-1/lung-b.jsonl | srcg | 91.13s | 2.35 GiB | steps=63</title></circle>
+<circle cx="1011.0" cy="474.9" r="8.8" fill="#2A9D6F" opacity="0.62" stroke="#FFFFFF" stroke-width="1"><title>milestone3/real-workloads/phase2-cache-aware-no-trace-2/lung-a.jsonl | srcg | 85.86s | 2.41 GiB | steps=63</title></circle>
+<circle cx="1011.0" cy="478.1" r="8.8" fill="#2A9D6F" opacity="0.62" stroke="#FFFFFF" stroke-width="1"><title>milestone3/real-workloads/phase2-cache-aware-no-trace-2/lung-b.jsonl | srcg | 85.87s | 2.32 GiB | steps=63</title></circle>
+<circle cx="1015.1" cy="460.1" r="8.8" fill="#4C78A8" opacity="0.62" stroke="#FFFFFF" stroke-width="1"><title>milestone3/real-workloads/phase2-normal-1/lung-a.jsonl | baseline | 89.46s | 2.86 GiB | steps=63</title></circle>
+<circle cx="1015.1" cy="470.3" r="8.8" fill="#4C78A8" opacity="0.62" stroke="#FFFFFF" stroke-width="1"><title>milestone3/real-workloads/phase2-normal-1/lung-b.jsonl | baseline | 89.47s | 2.55 GiB | steps=63</title></circle>
+<circle cx="1016.3" cy="452.7" r="8.8" fill="#4C78A8" opacity="0.62" stroke="#FFFFFF" stroke-width="1"><title>milestone3/real-workloads/phase2-normal-2/lung-a.jsonl | baseline | 90.54s | 3.08 GiB | steps=63</title></circle>
+<circle cx="1016.1" cy="477.0" r="8.8" fill="#4C78A8" opacity="0.62" stroke="#FFFFFF" stroke-width="1"><title>milestone3/real-workloads/phase2-normal-2/lung-b.jsonl | baseline | 90.43s | 2.35 GiB | steps=63</title></circle>
+<circle cx="1001.0" cy="478.2" r="8.8" fill="#4C78A8" opacity="0.62" stroke="#FFFFFF" stroke-width="1"><title>milestone3/real-workloads/repro-normal-1/lung-a.jsonl | baseline | 77.60s | 2.31 GiB | steps=63</title></circle>
+<circle cx="1000.7" cy="478.2" r="8.8" fill="#4C78A8" opacity="0.62" stroke="#FFFFFF" stroke-width="1"><title>milestone3/real-workloads/repro-normal-1/lung-b.jsonl | baseline | 77.36s | 2.31 GiB | steps=63</title></circle>
+<circle cx="999.6" cy="478.2" r="8.8" fill="#4C78A8" opacity="0.62" stroke="#FFFFFF" stroke-width="1"><title>milestone3/real-workloads/repro-normal-2/lung-a.jsonl | baseline | 76.50s | 2.31 GiB | steps=63</title></circle>
+<circle cx="999.9" cy="478.2" r="8.8" fill="#4C78A8" opacity="0.62" stroke="#FFFFFF" stroke-width="1"><title>milestone3/real-workloads/repro-normal-2/lung-b.jsonl | baseline | 76.74s | 2.31 GiB | steps=63</title></circle>
+<circle cx="1019.8" cy="478.2" r="8.8" fill="#2A9D6F" opacity="0.62" stroke="#FFFFFF" stroke-width="1"><title>milestone3/real-workloads/repro-srcg-1/lung-b.jsonl | srcg | 93.87s | 2.31 GiB | steps=63</title></circle>
+<circle cx="1021.8" cy="478.2" r="8.8" fill="#2A9D6F" opacity="0.62" stroke="#FFFFFF" stroke-width="1"><title>milestone3/real-workloads/repro-srcg-fifo-1/lung-a.jsonl | srcg | 95.78s | 2.31 GiB | steps=63</title></circle>
+<circle cx="1026.6" cy="478.3" r="8.8" fill="#2A9D6F" opacity="0.62" stroke="#FFFFFF" stroke-width="1"><title>milestone3/real-workloads/repro-srcg-fifo-1/lung-b.jsonl | srcg | 100.50s | 2.31 GiB | steps=63</title></circle>
+<circle cx="1022.9" cy="478.2" r="8.8" fill="#2A9D6F" opacity="0.62" stroke="#FFFFFF" stroke-width="1"><title>milestone3/real-workloads/repro-srcg-fifo-2/lung-a.jsonl | srcg | 96.79s | 2.31 GiB | steps=63</title></circle>
+<circle cx="1018.0" cy="478.2" r="8.8" fill="#2A9D6F" opacity="0.62" stroke="#FFFFFF" stroke-width="1"><title>milestone3/real-workloads/repro-srcg-fifo-2/lung-b.jsonl | srcg | 92.12s | 2.31 GiB | steps=63</title></circle>
+<circle cx="925.8" cy="389.0" r="8.8" fill="#4C78A8" opacity="0.62" stroke="#FFFFFF" stroke-width="1"><title>milestone3/timing/high-cold-sequential-1/lung-a.jsonl | baseline | 36.32s | 5.00 GiB | steps=63</title></circle>
+<circle cx="926.0" cy="394.8" r="8.8" fill="#4C78A8" opacity="0.62" stroke="#FFFFFF" stroke-width="1"><title>milestone3/timing/high-cold-sequential-1/lung-b.jsonl | baseline | 36.39s | 4.82 GiB | steps=63</title></circle>
+<circle cx="1014.4" cy="449.5" r="8.8" fill="#2A9D6F" opacity="0.62" stroke="#FFFFFF" stroke-width="1"><title>milestone3/timing/high-srcg-partial-release-validation-2/lung-a.jsonl | srcg | 88.85s | 3.18 GiB | steps=63</title></circle>
+<circle cx="1018.0" cy="467.2" r="8.8" fill="#2A9D6F" opacity="0.62" stroke="#FFFFFF" stroke-width="1"><title>milestone3/timing/high-srcg-partial-release-validation-2/lung-b.jsonl | srcg | 92.18s | 2.65 GiB | steps=63</title></circle>
+<circle cx="1007.4" cy="458.3" r="8.8" fill="#2A9D6F" opacity="0.62" stroke="#FFFFFF" stroke-width="1"><title>milestone3/timing/pressure-5g-scope7-validation-1/lung-a.jsonl | srcg | 82.76s | 2.91 GiB | steps=63</title></circle>
+<circle cx="1003.2" cy="448.7" r="8.8" fill="#2A9D6F" opacity="0.62" stroke="#FFFFFF" stroke-width="1"><title>milestone3/timing/pressure-5g-scope7-validation-1/lung-b.jsonl | srcg | 79.35s | 3.20 GiB | steps=63</title></circle>
+<circle cx="934.8" cy="409.9" r="8.8" fill="#4C78A8" opacity="0.62" stroke="#FFFFFF" stroke-width="1"><title>milestone3/timing/pressure-normal-1/lung-a.jsonl | baseline | 39.76s | 4.37 GiB | steps=63</title></circle>
+<circle cx="934.8" cy="427.9" r="8.8" fill="#4C78A8" opacity="0.62" stroke="#FFFFFF" stroke-width="1"><title>milestone3/timing/pressure-normal-1/lung-b.jsonl | baseline | 39.77s | 3.83 GiB | steps=63</title></circle>
+<circle cx="951.7" cy="431.4" r="8.8" fill="#2A9D6F" opacity="0.62" stroke="#FFFFFF" stroke-width="1"><title>milestone3/timing/pressure-srcg-1/lung-a.jsonl | srcg | 47.19s | 3.72 GiB | steps=63</title></circle>
+<circle cx="945.6" cy="435.3" r="8.8" fill="#2A9D6F" opacity="0.62" stroke="#FFFFFF" stroke-width="1"><title>milestone3/timing/pressure-srcg-1/lung-b.jsonl | srcg | 44.35s | 3.61 GiB | steps=63</title></circle>
+<circle cx="905.2" cy="422.2" r="8.8" fill="#4C78A8" opacity="0.62" stroke="#FFFFFF" stroke-width="1"><title>milestone4/calibration/baseline-4g-workers4-1/attempts/attempt-0001-943cdf9a-7f7c-479e-a705-8da39f4fa55f/training.jsonl | baseline | 29.50s | 4.00 GiB | steps=63</title></circle>
+<circle cx="950.2" cy="441.8" r="8.8" fill="#2A9D6F" opacity="0.62" stroke="#FFFFFF" stroke-width="1"><title>milestone4/calibration/srcg-3840m-workers4-budget256-1/attempts/attempt-0001-943cdf9a-7f7c-479e-a705-8da39f4fa55f/training.jsonl | srcg | 46.47s | 3.41 GiB | steps=63</title></circle>
+<text x="805.0" y="598.0" font-size="10" text-anchor="middle" font-weight="400" fill="#1F2933" >elapsed seconds (log scale)</text>
+<text x="1085.0" y="104.0" font-size="15" text-anchor="start" font-weight="700" fill="#1F2933" >Legacy prototype / size not logged (n=20)</text>
+<rect x="1085.0" y="125.0" width="470.0" height="430.0" fill="#FBFCFD" opacity="1.000" stroke="#D9DEE3" rx="5.0"/>
+<line x1="1085.0" y1="555.0" x2="1555.0" y2="555.0" stroke="#E7EBEE" stroke-width="1.0"/>
+<text x="1077.0" y="559.0" font-size="9" text-anchor="end" font-weight="400" fill="#66737F" >0</text>
+<line x1="1085.0" y1="488.6" x2="1555.0" y2="488.6" stroke="#E7EBEE" stroke-width="1.0"/>
+<text x="1077.0" y="492.6" font-size="9" text-anchor="end" font-weight="400" fill="#66737F" >2</text>
+<line x1="1085.0" y1="422.2" x2="1555.0" y2="422.2" stroke="#E7EBEE" stroke-width="1.0"/>
+<text x="1077.0" y="426.2" font-size="9" text-anchor="end" font-weight="400" fill="#66737F" >4</text>
+<line x1="1085.0" y1="355.8" x2="1555.0" y2="355.8" stroke="#E7EBEE" stroke-width="1.0"/>
+<text x="1077.0" y="359.8" font-size="9" text-anchor="end" font-weight="400" fill="#66737F" >6</text>
+<line x1="1085.0" y1="289.4" x2="1555.0" y2="289.4" stroke="#E7EBEE" stroke-width="1.0"/>
+<text x="1077.0" y="293.4" font-size="9" text-anchor="end" font-weight="400" fill="#66737F" >8</text>
+<line x1="1085.0" y1="223.0" x2="1555.0" y2="223.0" stroke="#E7EBEE" stroke-width="1.0"/>
+<text x="1077.0" y="227.0" font-size="9" text-anchor="end" font-weight="400" fill="#66737F" >10</text>
+<line x1="1085.0" y1="156.6" x2="1555.0" y2="156.6" stroke="#E7EBEE" stroke-width="1.0"/>
+<text x="1077.0" y="160.6" font-size="9" text-anchor="end" font-weight="400" fill="#66737F" >12</text>
+<line x1="1085.0" y1="125.0" x2="1085.0" y2="555.0" stroke="#EFF2F4" stroke-width="1.0"/>
+<text x="1085.0" y="573.0" font-size="9" text-anchor="middle" font-weight="400" fill="#66737F" >1</text>
+<line x1="1153.7" y1="125.0" x2="1153.7" y2="555.0" stroke="#EFF2F4" stroke-width="1.0"/>
+<text x="1153.7" y="573.0" font-size="9" text-anchor="middle" font-weight="400" fill="#66737F" >2</text>
+<line x1="1244.4" y1="125.0" x2="1244.4" y2="555.0" stroke="#EFF2F4" stroke-width="1.0"/>
+<text x="1244.4" y="573.0" font-size="9" text-anchor="middle" font-weight="400" fill="#66737F" >5</text>
+<line x1="1313.1" y1="125.0" x2="1313.1" y2="555.0" stroke="#EFF2F4" stroke-width="1.0"/>
+<text x="1313.1" y="573.0" font-size="9" text-anchor="middle" font-weight="400" fill="#66737F" >10</text>
+<line x1="1381.7" y1="125.0" x2="1381.7" y2="555.0" stroke="#EFF2F4" stroke-width="1.0"/>
+<text x="1381.7" y="573.0" font-size="9" text-anchor="middle" font-weight="400" fill="#66737F" >20</text>
+<line x1="1472.5" y1="125.0" x2="1472.5" y2="555.0" stroke="#EFF2F4" stroke-width="1.0"/>
+<text x="1472.5" y="573.0" font-size="9" text-anchor="middle" font-weight="400" fill="#66737F" >50</text>
+<line x1="1541.1" y1="125.0" x2="1541.1" y2="555.0" stroke="#EFF2F4" stroke-width="1.0"/>
+<text x="1541.1" y="573.0" font-size="9" text-anchor="middle" font-weight="400" fill="#66737F" >100</text>
+<circle cx="1085.0" cy="384.7" r="5.0" fill="#7F8C8D" opacity="0.62" stroke="#FFFFFF" stroke-width="1"><title>milestone3/checkpoint-smoke-single-resume.jsonl | unknown | 1.00s | 5.13 GiB | steps=5</title></circle>
+<circle cx="1085.0" cy="385.2" r="5.0" fill="#7F8C8D" opacity="0.62" stroke="#FFFFFF" stroke-width="1"><title>milestone3/checkpoint-smoke-single-stop.jsonl | unknown | 1.00s | 5.11 GiB | steps=3</title></circle>
+<circle cx="1085.0" cy="380.5" r="5.0" fill="#4C78A8" opacity="0.62" stroke="#FFFFFF" stroke-width="1"><title>milestone3/checkpoint-smoke-uninterrupted.jsonl | baseline | 1.00s | 5.26 GiB | steps=8</title></circle>
+<circle cx="1156.2" cy="348.7" r="5.0" fill="#4C78A8" opacity="0.62" stroke="#FFFFFF" stroke-width="1"><title>milestone3/coco-baseline/train.jsonl | baseline | 2.05s | 6.21 GiB | steps=16</title></circle>
+<circle cx="1144.3" cy="512.3" r="5.0" fill="#4C78A8" opacity="0.62" stroke="#FFFFFF" stroke-width="1"><title>milestone3/coco-baseline-scope/train.jsonl | baseline | 1.82s | 1.29 GiB | steps=16</title></circle>
+<circle cx="1145.5" cy="348.0" r="5.0" fill="#7F8C8D" opacity="0.62" stroke="#FFFFFF" stroke-width="1"><title>milestone3/coco-checkpoint/train.jsonl | unknown | 1.84s | 6.23 GiB | steps=16</title></circle>
+<circle cx="1143.4" cy="512.5" r="5.0" fill="#7F8C8D" opacity="0.62" stroke="#FFFFFF" stroke-width="1"><title>milestone3/coco-checkpoint-scope/train.jsonl | unknown | 1.80s | 1.28 GiB | steps=16</title></circle>
+<circle cx="1085.0" cy="540.4" r="5.0" fill="#7F8C8D" opacity="0.62" stroke="#FFFFFF" stroke-width="1"><title>milestone3/controller-recovery-e2e/train.jsonl | unknown | 1.00s | 0.44 GiB | steps=5</title></circle>
+<circle cx="1085.0" cy="541.2" r="5.0" fill="#7F8C8D" opacity="0.62" stroke="#FFFFFF" stroke-width="1"><title>milestone3/controller-recovery-final/train.jsonl | unknown | 1.00s | 0.42 GiB | steps=2</title></circle>
+<circle cx="1331.0" cy="447.7" r="5.0" fill="#4C78A8" opacity="0.62" stroke="#FFFFFF" stroke-width="1"><title>milestone3/lung-baseline-scope/train.jsonl | baseline | 11.98s | 3.23 GiB | steps=8</title></circle>
+<circle cx="1327.6" cy="474.3" r="5.0" fill="#7F8C8D" opacity="0.62" stroke="#FFFFFF" stroke-width="1"><title>milestone3/lung-checkpoint-scope/train.jsonl | unknown | 11.58s | 2.43 GiB | steps=8</title></circle>
+<circle cx="1106.9" cy="525.7" r="5.0" fill="#2A9D6F" opacity="0.62" stroke="#FFFFFF" stroke-width="1"><title>milestone3/m3-comparison/coco-borrow.jsonl | srcg | 1.25s | 0.88 GiB | steps=16</title></circle>
+<circle cx="1104.4" cy="525.7" r="5.0" fill="#4C78A8" opacity="0.62" stroke="#FFFFFF" stroke-width="1"><title>milestone3/m3-comparison/coco-fixed.jsonl | baseline | 1.22s | 0.88 GiB | steps=16</title></circle>
+<circle cx="1313.0" cy="484.3" r="5.0" fill="#2A9D6F" opacity="0.62" stroke="#FFFFFF" stroke-width="1"><title>milestone3/m3-comparison/lung-borrow.jsonl | srcg | 9.99s | 2.13 GiB | steps=8</title></circle>
+<circle cx="1314.0" cy="484.3" r="5.0" fill="#4C78A8" opacity="0.62" stroke="#FFFFFF" stroke-width="1"><title>milestone3/m3-comparison/lung-fixed.jsonl | baseline | 10.09s | 2.13 GiB | steps=8</title></circle>
+<circle cx="1109.6" cy="525.7" r="5.0" fill="#2A9D6F" opacity="0.62" stroke="#FFFFFF" stroke-width="1"><title>milestone3/m3-comparison-final/coco-borrow.jsonl | srcg | 1.28s | 0.88 GiB | steps=16</title></circle>
+<circle cx="1105.6" cy="525.7" r="5.0" fill="#4C78A8" opacity="0.62" stroke="#FFFFFF" stroke-width="1"><title>milestone3/m3-comparison-final/coco-fixed.jsonl | baseline | 1.23s | 0.88 GiB | steps=16</title></circle>
+<circle cx="1312.2" cy="484.3" r="5.0" fill="#2A9D6F" opacity="0.62" stroke="#FFFFFF" stroke-width="1"><title>milestone3/m3-comparison-final/lung-borrow.jsonl | srcg | 9.91s | 2.13 GiB | steps=8</title></circle>
+<circle cx="1311.9" cy="484.3" r="5.0" fill="#4C78A8" opacity="0.62" stroke="#FFFFFF" stroke-width="1"><title>milestone3/m3-comparison-final/lung-fixed.jsonl | baseline | 9.88s | 2.13 GiB | steps=8</title></circle>
+<circle cx="1085.0" cy="541.4" r="5.0" fill="#2A9D6F" opacity="0.62" stroke="#FFFFFF" stroke-width="1"><title>milestone3/reservation-smoke/train.jsonl | srcg | 1.00s | 0.41 GiB | steps=2</title></circle>
+<text x="1320.0" y="598.0" font-size="10" text-anchor="middle" font-weight="400" fill="#1F2933" >elapsed seconds (log scale)</text>
+<text x="18.0" y="340.0" font-size="11" text-anchor="middle" font-weight="400" fill="#1F2933" transform="rotate(-90 18 340.0)">cgroup memory peak (GiB)</text>
+<circle cx="1140" cy="600" r="6" fill="#4C78A8"/>
+<text x="1150.0" y="604.0" font-size="9" text-anchor="start" font-weight="400" fill="#1F2933" >baseline</text>
+<circle cx="1222" cy="600" r="6" fill="#E3A62F"/>
+<text x="1232.0" y="604.0" font-size="9" text-anchor="start" font-weight="400" fill="#1F2933" >sequential</text>
+<circle cx="1304" cy="600" r="6" fill="#2A9D6F"/>
+<text x="1314.0" y="604.0" font-size="9" text-anchor="start" font-weight="400" fill="#1F2933" >srcg</text>
+<circle cx="1386" cy="600" r="6" fill="#7A6F9B"/>
+<text x="1396.0" y="604.0" font-size="9" text-anchor="start" font-weight="400" fill="#1F2933" >fixed</text>
+<circle cx="1468" cy="600" r="6" fill="#7F8C8D"/>
+<text x="1478.0" y="604.0" font-size="9" text-anchor="start" font-weight="400" fill="#1F2933" >unknown</text>
+</svg>

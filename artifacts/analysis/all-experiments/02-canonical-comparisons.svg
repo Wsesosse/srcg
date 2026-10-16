@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1540" height="870" viewBox="0 0 1540 870" role="img" aria-label="Canonical SRCG comparisons">
+<title>Canonical SRCG comparisons</title>
+<style>text{font-family:Inter,Segoe UI,Arial,sans-serif}.mono{font-family:ui-monospace,SFMono-Regular,Consolas,monospace}</style>
+<rect x="0.0" y="0.0" width="1540.0" height="870.0" fill="#FFFFFF" opacity="1.000" stroke="none" rx="0.0"/>
+<text x="30.0" y="40.0" font-size="26" text-anchor="start" font-weight="700" fill="#1F2933" >Canonical comparison — คัดเฉพาะเงื่อนไขที่เทียบกันได้</text>
+<text x="30.0" y="66.0" font-size="12" text-anchor="start" font-weight="400" fill="#66737F" >mean = ค่าเฉลี่ย trials; failed PyTorch bar = time-to-failure ห้ามอ่านว่าเร็วกว่า เพราะ training ไม่จบ</text>
+<text x="30.0" y="103.0" font-size="13" text-anchor="start" font-weight="700" fill="#1F2933" >Scenario / mode</text>
+<text x="565.0" y="103.0" font-size="13" text-anchor="start" font-weight="700" fill="#1F2933" >Makespan = เวลารวม</text>
+<text x="965.0" y="103.0" font-size="13" text-anchor="start" font-weight="700" fill="#1F2933" >Parent peak = RAM สูงสุดรวม</text>
+<text x="1280.0" y="103.0" font-size="13" text-anchor="start" font-weight="700" fill="#1F2933" >Completed = งานที่ทำครบ</text>
+<rect x="18.0" y="120.0" width="1504.0" height="208.0" fill="#F8FAFB" opacity="1.000" stroke="none" rx="9.0"/>
+<text x="30.0" y="145.0" font-size="15" text-anchor="start" font-weight="700" fill="#1F2933" >4 GiB capacity / two Lung jobs</text>
+<rect x="42.0" y="161.0" width="13.0" height="13.0" fill="#4C78A8" opacity="1.000" stroke="none" rx="3.0"/>
+<text x="64.0" y="172.0" font-size="12" text-anchor="start" font-weight="400" fill="#1F2933" >PyTorch concurrent  (n=2)</text>
+<rect x="565.0" y="157.0" width="310.0" height="22.0" fill="#E9EDF1" opacity="1.000" stroke="none" rx="4.0"/>
+<rect x="565.0" y="157.0" width="33.0" height="22.0" fill="#D1495B" opacity="0.820" stroke="none" rx="4.0"/>
+<text x="883.0" y="172.0" font-size="10" text-anchor="start" font-weight="400" fill="#1F2933" >16.8s to failure</text>
+<rect x="965.0" y="157.0" width="230.0" height="22.0" fill="#E9EDF1" opacity="1.000" stroke="none" rx="4.0"/>
+<rect x="965.0" y="157.0" width="115.0" height="22.0" fill="#4C78A8" opacity="0.820" stroke="none" rx="4.0"/>
+<text x="1203.0" y="172.0" font-size="10" text-anchor="start" font-weight="400" fill="#1F2933" >4.00 GiB</text>
+<rect x="1280.0" y="157.0" width="170.0" height="22.0" fill="#E9EDF1" opacity="1.000" stroke="none" rx="4.0"/>
+<rect x="1280.0" y="157.0" width="0.0" height="22.0" fill="#2A9D6F" opacity="0.820" stroke="none" rx="4.0"/>
+<text x="1458.0" y="172.0" font-size="10" text-anchor="start" font-weight="400" fill="#1F2933" >0.0/2</text>
+<rect x="42.0" y="211.0" width="13.0" height="13.0" fill="#E3A62F" opacity="1.000" stroke="none" rx="3.0"/>
+<text x="64.0" y="222.0" font-size="12" text-anchor="start" font-weight="400" fill="#1F2933" >PyTorch sequential  (n=2)</text>
+<rect x="565.0" y="207.0" width="310.0" height="22.0" fill="#E9EDF1" opacity="1.000" stroke="none" rx="4.0"/>
+<rect x="565.0" y="207.0" width="310.0" height="22.0" fill="#E3A62F" opacity="0.820" stroke="none" rx="4.0"/>
+<text x="883.0" y="222.0" font-size="10" text-anchor="start" font-weight="400" fill="#1F2933" >157.9s</text>
+<rect x="965.0" y="207.0" width="230.0" height="22.0" fill="#E9EDF1" opacity="1.000" stroke="none" rx="4.0"/>
+<rect x="965.0" y="207.0" width="115.0" height="22.0" fill="#E3A62F" opacity="0.820" stroke="none" rx="4.0"/>
+<text x="1203.0" y="222.0" font-size="10" text-anchor="start" font-weight="400" fill="#1F2933" >4.00 GiB</text>
+<rect x="1280.0" y="207.0" width="170.0" height="22.0" fill="#E9EDF1" opacity="1.000" stroke="none" rx="4.0"/>
+<rect x="1280.0" y="207.0" width="170.0" height="22.0" fill="#2A9D6F" opacity="0.820" stroke="none" rx="4.0"/>
+<text x="1458.0" y="222.0" font-size="10" text-anchor="start" font-weight="400" fill="#1F2933" >2.0/2</text>
+<rect x="42.0" y="261.0" width="13.0" height="13.0" fill="#2A9D6F" opacity="1.000" stroke="none" rx="3.0"/>
+<text x="64.0" y="272.0" font-size="12" text-anchor="start" font-weight="400" fill="#1F2933" >SRCG concurrent  (n=2)</text>
+<rect x="565.0" y="257.0" width="310.0" height="22.0" fill="#E9EDF1" opacity="1.000" stroke="none" rx="4.0"/>
+<rect x="565.0" y="257.0" width="179.8" height="22.0" fill="#2A9D6F" opacity="0.820" stroke="none" rx="4.0"/>
+<text x="883.0" y="272.0" font-size="10" text-anchor="start" font-weight="400" fill="#1F2933" >91.6s</text>
+<rect x="965.0" y="257.0" width="230.0" height="22.0" fill="#E9EDF1" opacity="1.000" stroke="none" rx="4.0"/>
+<rect x="965.0" y="257.0" width="103.5" height="22.0" fill="#2A9D6F" opacity="0.820" stroke="none" rx="4.0"/>
+<text x="1203.0" y="272.0" font-size="10" text-anchor="start" font-weight="400" fill="#1F2933" >3.60 GiB</text>
+<rect x="1280.0" y="257.0" width="170.0" height="22.0" fill="#E9EDF1" opacity="1.000" stroke="none" rx="4.0"/>
+<rect x="1280.0" y="257.0" width="170.0" height="22.0" fill="#2A9D6F" opacity="0.820" stroke="none" rx="4.0"/>
+<text x="1458.0" y="272.0" font-size="10" text-anchor="start" font-weight="400" fill="#1F2933" >2.0/2</text>
+<rect x="18.0" y="338.0" width="1504.0" height="150.0" fill="#F8FAFB" opacity="1.000" stroke="none" rx="9.0"/>
+<text x="30.0" y="363.0" font-size="15" text-anchor="start" font-weight="700" fill="#1F2933" >Late 512 MiB process / 5 GiB outer scope</text>
+<rect x="42.0" y="379.0" width="13.0" height="13.0" fill="#4C78A8" opacity="1.000" stroke="none" rx="3.0"/>
+<text x="64.0" y="390.0" font-size="12" text-anchor="start" font-weight="400" fill="#1F2933" >PyTorch concurrent  (n=2)</text>
+<rect x="565.0" y="375.0" width="310.0" height="22.0" fill="#E9EDF1" opacity="1.000" stroke="none" rx="4.0"/>
+<rect x="565.0" y="375.0" width="68.8" height="22.0" fill="#D1495B" opacity="0.820" stroke="none" rx="4.0"/>
+<text x="883.0" y="390.0" font-size="10" text-anchor="start" font-weight="400" fill="#1F2933" >35.1s to failure</text>
+<rect x="965.0" y="375.0" width="230.0" height="22.0" fill="#E9EDF1" opacity="1.000" stroke="none" rx="4.0"/>
+<rect x="965.0" y="375.0" width="129.3" height="22.0" fill="#4C78A8" opacity="0.820" stroke="none" rx="4.0"/>
+<text x="1203.0" y="390.0" font-size="10" text-anchor="start" font-weight="400" fill="#1F2933" >4.50 GiB</text>
+<rect x="1280.0" y="375.0" width="170.0" height="22.0" fill="#E9EDF1" opacity="1.000" stroke="none" rx="4.0"/>
+<rect x="1280.0" y="375.0" width="0.0" height="22.0" fill="#2A9D6F" opacity="0.820" stroke="none" rx="4.0"/>
+<text x="1458.0" y="390.0" font-size="10" text-anchor="start" font-weight="400" fill="#1F2933" >0.0/2</text>
+<rect x="42.0" y="429.0" width="13.0" height="13.0" fill="#2A9D6F" opacity="1.000" stroke="none" rx="3.0"/>
+<text x="64.0" y="440.0" font-size="12" text-anchor="start" font-weight="400" fill="#1F2933" >SRCG + 1 GiB headroom  (n=2)</text>
+<rect x="565.0" y="425.0" width="310.0" height="22.0" fill="#E9EDF1" opacity="1.000" stroke="none" rx="4.0"/>
+<rect x="565.0" y="425.0" width="219.2" height="22.0" fill="#2A9D6F" opacity="0.820" stroke="none" rx="4.0"/>
+<text x="883.0" y="440.0" font-size="10" text-anchor="start" font-weight="400" fill="#1F2933" >111.7s</text>
+<rect x="965.0" y="425.0" width="230.0" height="22.0" fill="#E9EDF1" opacity="1.000" stroke="none" rx="4.0"/>
+<rect x="965.0" y="425.0" width="102.9" height="22.0" fill="#2A9D6F" opacity="0.820" stroke="none" rx="4.0"/>
+<text x="1203.0" y="440.0" font-size="10" text-anchor="start" font-weight="400" fill="#1F2933" >3.58 GiB</text>
+<rect x="1280.0" y="425.0" width="170.0" height="22.0" fill="#E9EDF1" opacity="1.000" stroke="none" rx="4.0"/>
+<rect x="1280.0" y="425.0" width="170.0" height="22.0" fill="#2A9D6F" opacity="0.820" stroke="none" rx="4.0"/>
+<text x="1458.0" y="440.0" font-size="10" text-anchor="start" font-weight="400" fill="#1F2933" >2.0/2</text>
+<rect x="18.0" y="506.0" width="1504.0" height="150.0" fill="#F8FAFB" opacity="1.000" stroke="none" rx="9.0"/>
+<text x="30.0" y="531.0" font-size="15" text-anchor="start" font-weight="700" fill="#1F2933" >Normal pressure / 8 GiB parent / workers=2</text>
+<rect x="42.0" y="547.0" width="13.0" height="13.0" fill="#4C78A8" opacity="1.000" stroke="none" rx="3.0"/>
+<text x="64.0" y="558.0" font-size="12" text-anchor="start" font-weight="400" fill="#1F2933" >PyTorch concurrent  (n=1)</text>
+<rect x="565.0" y="543.0" width="310.0" height="22.0" fill="#E9EDF1" opacity="1.000" stroke="none" rx="4.0"/>
+<rect x="565.0" y="543.0" width="87.2" height="22.0" fill="#4C78A8" opacity="0.820" stroke="none" rx="4.0"/>
+<text x="883.0" y="558.0" font-size="10" text-anchor="start" font-weight="400" fill="#1F2933" >44.4s</text>
+<rect x="965.0" y="543.0" width="230.0" height="22.0" fill="#E9EDF1" opacity="1.000" stroke="none" rx="4.0"/>
+<rect x="965.0" y="543.0" width="230.0" height="22.0" fill="#4C78A8" opacity="0.820" stroke="none" rx="4.0"/>
+<text x="1203.0" y="558.0" font-size="10" text-anchor="start" font-weight="400" fill="#1F2933" >8.00 GiB</text>
+<rect x="1280.0" y="543.0" width="170.0" height="22.0" fill="#E9EDF1" opacity="1.000" stroke="none" rx="4.0"/>
+<rect x="1280.0" y="543.0" width="170.0" height="22.0" fill="#2A9D6F" opacity="0.820" stroke="none" rx="4.0"/>
+<text x="1458.0" y="558.0" font-size="10" text-anchor="start" font-weight="400" fill="#1F2933" >2.0/2</text>
+<rect x="42.0" y="597.0" width="13.0" height="13.0" fill="#2A9D6F" opacity="1.000" stroke="none" rx="3.0"/>
+<text x="64.0" y="608.0" font-size="12" text-anchor="start" font-weight="400" fill="#1F2933" >SRCG concurrent  (n=1)</text>
+<rect x="565.0" y="593.0" width="310.0" height="22.0" fill="#E9EDF1" opacity="1.000" stroke="none" rx="4.0"/>
+<rect x="565.0" y="593.0" width="99.3" height="22.0" fill="#2A9D6F" opacity="0.820" stroke="none" rx="4.0"/>
+<text x="883.0" y="608.0" font-size="10" text-anchor="start" font-weight="400" fill="#1F2933" >50.6s</text>
+<rect x="965.0" y="593.0" width="230.0" height="22.0" fill="#E9EDF1" opacity="1.000" stroke="none" rx="4.0"/>
+<rect x="965.0" y="593.0" width="177.7" height="22.0" fill="#2A9D6F" opacity="0.820" stroke="none" rx="4.0"/>
+<text x="1203.0" y="608.0" font-size="10" text-anchor="start" font-weight="400" fill="#1F2933" >6.18 GiB</text>
+<rect x="1280.0" y="593.0" width="170.0" height="22.0" fill="#E9EDF1" opacity="1.000" stroke="none" rx="4.0"/>
+<rect x="1280.0" y="593.0" width="170.0" height="22.0" fill="#2A9D6F" opacity="0.820" stroke="none" rx="4.0"/>
+<text x="1458.0" y="608.0" font-size="10" text-anchor="start" font-weight="400" fill="#1F2933" >2.0/2</text>
+<text x="30.0" y="812.0" font-size="12" text-anchor="start" font-weight="700" fill="#8A5700" >Scope limitation</text>
+<text x="30.0" y="834.0" font-size="12" text-anchor="start" font-weight="400" fill="#8A5700" >These baselines use ordinary/conservative PyTorch settings, not every possible manually tuned static scheduler configuration.</text>
+</svg>

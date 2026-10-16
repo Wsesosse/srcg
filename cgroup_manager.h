@@ -53,6 +53,13 @@ struct CgroupSnapshot {
   std::vector<pid_t> processes;
 };
 
+struct CgroupMemoryBoundary {
+  std::filesystem::path path;
+  std::uint64_t limit_bytes{};
+  std::uint64_t current_bytes{};
+  std::uint64_t available_bytes{};
+};
+
 class CgroupV2Manager {
 public:
   explicit CgroupV2Manager(std::filesystem::path parent,
@@ -63,8 +70,21 @@ public:
                         MemoryLimit swap_limit_bytes);
   void createJob(const std::string &job_id, std::uint64_t memory_limit_bytes,
                  MemoryLimit swap_limit_bytes);
+  void setJobMemoryLimit(const std::string &job_id,
+                         std::uint64_t memory_limit_bytes);
+  [[nodiscard]] bool
+  lowerJobMemoryLimitIfSafe(const std::string &job_id,
+                            std::uint64_t memory_limit_bytes,
+                            std::uint64_t safety_margin_bytes);
   void attachProcess(const std::string &job_id, pid_t pid) const;
+  [[nodiscard]] CgroupSnapshot parentSnapshot() const;
   [[nodiscard]] CgroupSnapshot snapshot(const std::string &job_id) const;
+  // Return every finite memory boundary above the SRCG parent. This excludes
+  // the SRCG parent itself: its limit is enforced separately by the
+  // reservation manager. An empty vector means all visible ancestors use
+  // memory.max=max (or this is a test filesystem without ancestor controls).
+  [[nodiscard]] std::vector<CgroupMemoryBoundary>
+  ancestorMemoryBoundaries() const;
   [[nodiscard]] bool cleanupSafe(const std::string &job_id) const;
   void cleanupJob(const std::string &job_id);
 
