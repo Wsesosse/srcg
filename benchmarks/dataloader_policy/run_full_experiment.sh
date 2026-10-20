@@ -17,6 +17,9 @@ project_root=$(cd "$(dirname "$script_path")/../.." && pwd)
 output_arg=${2:-"artifacts/milestone3/real-workloads/manual-${mode}-$(date +%Y%m%d-%H%M%S)"}
 scope_memory=${SRCG_SCOPE_MEMORY:-6G}
 parent_memory=${SRCG_PARENT_MEMORY:-5GiB}
+scope_swap=${SRCG_SCOPE_SWAP:-0}
+parent_swap=${SRCG_PARENT_SWAP:-0}
+job_swap=${SRCG_JOB_SWAP:-0}
 job_base_memory=${SRCG_JOB_BASE_MEMORY:-1660MiB}
 reserved_memory=${SRCG_RESERVED_MEMORY:-1800MiB}
 host_headroom=${SRCG_HOST_HEADROOM:-1GiB}
@@ -51,12 +54,15 @@ if [[ ${SRCG_EXPERIMENT_INNER:-0} != 1 ]]; then
     --working-directory="$project_root" \
     --property=Delegate=yes \
     --property=MemoryMax="$scope_memory" \
-    --property=MemorySwapMax=0 \
+    --property=MemorySwapMax="$scope_swap" \
     --setenv=SRCG_EXPERIMENT_INNER=1 \
     --setenv=SRCG_MEMORY_TRACE="${SRCG_MEMORY_TRACE:-0}" \
     --setenv=SRCG_RESERVATION_PHASE_MODE="${SRCG_RESERVATION_PHASE_MODE:-auto}" \
     --setenv=SRCG_SCOPE_MEMORY="$scope_memory" \
     --setenv=SRCG_PARENT_MEMORY="$parent_memory" \
+    --setenv=SRCG_SCOPE_SWAP="$scope_swap" \
+    --setenv=SRCG_PARENT_SWAP="$parent_swap" \
+    --setenv=SRCG_JOB_SWAP="$job_swap" \
     --setenv=SRCG_JOB_BASE_MEMORY="$job_base_memory" \
     --setenv=SRCG_RESERVED_MEMORY="$reserved_memory" \
     --setenv=SRCG_HOST_HEADROOM="$host_headroom" \
@@ -90,7 +96,7 @@ training=$project_root/benchmarks/dataloader_policy/train.py
 "$srcg" init \
   --parent "$parent" \
   --parent-memory "$parent_memory" \
-  --parent-swap 0 \
+  --parent-swap "$parent_swap" \
   --host-headroom "$host_headroom" \
   > "$output_dir/init.log"
 
@@ -126,7 +132,7 @@ run_lung() {
     "$srcg" run
     --parent "$parent"
     --job "$job"
-    --swap 0
+    --swap "$job_swap"
     --interval-ms 50
     --log "$output_dir/lung-${suffix}-srcg.log"
   )
@@ -208,8 +214,18 @@ makespan_ms=$(((ended_ns - started_ns) / 1000000))
 parent_peak_bytes=$(<"$parent/memory.peak")
 cp "$parent/memory.events" "$output_dir/parent-memory.events"
 cp "$parent/memory.stat" "$output_dir/parent-memory.stat"
+cp "$parent/memory.swap.max" "$output_dir/parent-memory.swap.max"
+cp "$parent/memory.swap.current" "$output_dir/parent-memory.swap.current"
+cp "$parent/memory.swap.peak" "$output_dir/parent-memory.swap.peak"
+cp "$parent/memory.swap.events" "$output_dir/parent-memory.swap.events"
+cp "$parent/memory.pressure" "$output_dir/parent-memory.pressure"
 cp "$scope/memory.events" "$output_dir/scope-memory.events"
 cp "$scope/memory.stat" "$output_dir/scope-memory.stat"
+cp "$scope/memory.swap.max" "$output_dir/scope-memory.swap.max"
+cp "$scope/memory.swap.current" "$output_dir/scope-memory.swap.current"
+cp "$scope/memory.swap.peak" "$output_dir/scope-memory.swap.peak"
+cp "$scope/memory.swap.events" "$output_dir/scope-memory.swap.events"
+cp "$scope/memory.pressure" "$output_dir/scope-memory.pressure"
 scope_peak_bytes=$(<"$scope/memory.peak")
 
 printf 'mode=%s first_status=%s second_status=%s probe_status=%s makespan_ms=%s parent_peak_bytes=%s scope_peak_bytes=%s scope_memory=%s parent_memory=%s job_base_memory=%s reserved_memory=%s host_headroom=%s probe_memory=%s num_workers=%s prefetch_factor=%s pin_memory=%s reservation_phase_mode=%s\n' \

@@ -37,6 +37,7 @@ Testing/
 # artifacts/analysis/ and documentation under docs/ tracked.
 /ML-Test-Dataset/
 /artifacts/milestone*/
+/artifacts/e8-swap-*/
 
 # Runtime diagnostics and crash dumps
 *.log

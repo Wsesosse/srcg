@@ -285,3 +285,23 @@ Matplotlib/Pandas มันเก็บ invalid และ development runs ไ�
 ผลอยู่ใน `artifacts/analysis/all-experiments/` ประกอบด้วย SVG, CSV inventory และ
 `report.md` กราฟ model size ใช้จำนวน parameters ที่ training program บันทึกจริง;
 log รุ่นเก่าที่ไม่บันทึก architecture จะระบุ `not_logged` แทนการเดาขนาด
+
+## E8 swap-capacity boundary (2026-10-20)
+
+The [E8 report](../../artifacts/analysis/e8-swap-20261020-report.md) and
+[per-run CSV](../../artifacts/analysis/e8-swap-20261020-runs.csv) compare two
+concurrent Task06_Lung jobs under the same 8 GiB outer RAM, 6 GiB parent RAM,
+and 0–2048 MiB outer/parent/job swap caps. The experiment preserves SRCG's
+existing RAM admission and borrowing policy; it does not add swap management.
+
+To make a new, uniquely numbered repetition from the repository root:
+
+```bash
+bash benchmarks/dataloader_policy/run_e8_swap.sh normal 512 4
+bash benchmarks/dataloader_policy/run_e8_swap.sh srcg 512 4
+```
+
+The runner checks host swap before each attempt, records actual live kernel
+limits and counters, and never modifies host swap. Raw output is in
+`artifacts/e8-swap-20261020/` and intentionally Git-ignored. The report defines
+every outcome and explains the single observed SRCG admission stall.
